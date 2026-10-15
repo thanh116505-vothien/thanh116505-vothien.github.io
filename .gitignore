@@ -1,0 +1,12 @@
+# Local Clean Source & Backups
+index.source.html
+*.source.*
+*.backup.*
+*.dev.*
+test-*.js
+out.js
+build-protect.js
+package*.json
+node_modules/
+.DS_Store
+*.log
