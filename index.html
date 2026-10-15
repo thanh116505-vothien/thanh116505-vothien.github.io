@@ -1,0 +1,2349 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0B0D10">
+  <title>Vô Thiên (VoThien) — Từ Đồng Đến Mã | Digital Identity &amp; Portfolio</title>
+  <meta name="description" content="Website CV &amp; Portfolio của Vô Thiên (VoThien) — Game Localization Specialist, Reverse Engineer &amp; Modder, AI Prompt Architect, Security Researcher.">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Vô Thiên (VoThien) — Từ Đồng Đến Mã">
+  <meta property="og:description" content="Vietnamese Mythology × Cyber Technology — Game Localization, Reverse Engineering, Server Ops, AI Engineering.">
+  <meta property="og:image" content="./assets/vothien-banner.svg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & SYSTEM VARIABLES
+       ========================================================================== */
+    :root {
+      /* Obsidian Dark Theme (Default) */
+      --obsidian-950: #05070A;
+      --obsidian-900: #0B0D10;
+      --obsidian-800: #12161B;
+      --obsidian-700: #1B2129;
+      --obsidian-600: #262F3A;
+      
+      /* Gold & Bronze Metallic System */
+      --gold-300: #F1DE9B;
+      --imperial-gold: #D4AF37;
+      --antique-bronze: #8C6B32;
+      --bronze-deep: #4A3818;
+      
+      /* Accent Signals */
+      --jade-green: #00C896;
+      --cyber-cyan: #36D7E8;
+      --cinnabar: #A63A2B;
+      
+      /* Text Typography */
+      --ivory-white: #EAE4D8;
+      --ivory-400: #B9B2A3;
+      --ivory-600: #7A7468;
+      
+      /* Font Stacks */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      
+      /* Metallic Gradients */
+      --grad-gold: linear-gradient(135deg, #F1DE9B 0%, #D4AF37 45%, #8C6B32 100%);
+      --grad-bronze: linear-gradient(135deg, #D4AF37 0%, #8C6B32 50%, #4A3818 100%);
+      --grad-jade: linear-gradient(135deg, #00C896 0%, #008764 100%);
+      --grad-cyan: linear-gradient(135deg, #36D7E8 0%, #0E8391 100%);
+      
+      /* Layout & Spacing */
+      --container-max: 1040px;
+      --nav-height: 64px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      /* Transitions */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 180ms var(--ease-out);
+      --transition-normal: 300ms var(--ease-out);
+      --transition-slow: 600ms var(--ease-out);
+    }
+
+    /* Giấy Dó (Light Theme Variant) */
+    [data-theme="light"] {
+      --obsidian-950: #F0EAE1;
+      --obsidian-900: #FAF6F0;
+      --obsidian-800: #EDE6DC;
+      --obsidian-700: #DDD3C4;
+      --obsidian-600: #C8BCAC;
+      --ivory-white: #181512;
+      --ivory-400: #574F44;
+      --ivory-600: #887E71;
+      --imperial-gold: #9E7B1A;
+      --antique-bronze: #6D511E;
+      --bronze-deep: #423010;
+      --jade-green: #007D5D;
+      --cyber-cyan: #0E7986;
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--obsidian-900);
+      color: var(--ivory-white);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--obsidian-900);
+      color: var(--ivory-white);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .epigraph {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--antique-bronze);
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.5px;
+    }
+
+    .section-divider {
+      margin: 3.5rem auto;
+      opacity: 0.9;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: var(--imperial-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header img {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* ==========================================================================
+       3. OPENING SEQUENCE (SYSTEM INTRO)
+       ========================================================================== */
+    #opening-sequence {
+      position: fixed;
+      inset: 0;
+      background-color: var(--obsidian-950);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s var(--ease-out), visibility 0.6s;
+    }
+
+    #opening-sequence.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-star-pulse {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 2rem;
+      animation: introPulse 3s infinite ease-in-out;
+    }
+
+    @keyframes introPulse {
+      0%, 100% { transform: scale(0.95); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2)); }
+      50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6)); }
+    }
+
+    .intro-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 6px;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro-status {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--cyber-cyan);
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+    }
+
+    .intro-progress-bar {
+      width: 240px;
+      height: 3px;
+      background: var(--obsidian-700);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .intro-progress-fill {
+      width: 0%;
+      height: 100%;
+      background: var(--grad-gold);
+      transition: width 0.15s ease-out;
+    }
+
+    .intro-skip-btn {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--antique-bronze);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--ivory-400);
+      letter-spacing: 1.5px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition-fast);
+    }
+
+    .intro-skip-btn:hover {
+      border-color: var(--imperial-gold);
+      color: var(--imperial-gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    /* ==========================================================================
+       4. NAVIGATION & COMMAND BAR
+       ========================================================================== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      background: rgba(11, 13, 16, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--obsidian-700);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--imperial-gold);
+    }
+
+    .nav-brand img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--ivory-400);
+      padding: 0.35rem 0;
+      position: relative;
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--imperial-gold);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--imperial-gold);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .action-btn {
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ivory-400);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition-fast);
+    }
+
+    .action-btn:hover {
+      border-color: var(--imperial-gold);
+      color: var(--imperial-gold);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      padding: 0.5rem;
+      color: var(--imperial-gold);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION (FROM BRONZE TO CODE)
+       ========================================================================== */
+    .hero-section {
+      padding-top: 1.5rem;
+      padding-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .hero-banner-wrap {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      overflow: hidden;
+      border: 1px solid var(--obsidian-700);
+      border-bottom: none;
+      background: var(--obsidian-950);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-wordmark-wrap {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      border-left: 1px solid var(--obsidian-700);
+      border-right: 1px solid var(--obsidian-700);
+      background: var(--obsidian-900);
+    }
+
+    .hero-typing-wrap {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      background: var(--obsidian-900);
+      border-left: 1px solid var(--obsidian-700);
+      border-right: 1px solid var(--obsidian-700);
+      border-bottom: 1px solid var(--obsidian-700);
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--imperial-gold);
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background-color: var(--imperial-gold);
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(0, 200, 150, 0.08);
+      border: 1px solid rgba(0, 200, 150, 0.3);
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--jade-green);
+      letter-spacing: 1px;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-status-pill::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--jade-green);
+      box-shadow: 0 0 8px var(--jade-green);
+    }
+
+    .hero-greeting {
+      max-width: 720px;
+      margin: 0 auto 1.75rem auto;
+      font-size: 1.05rem;
+      color: var(--ivory-400);
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      background: var(--grad-gold);
+      color: var(--obsidian-950);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+      transition: var(--transition-fast);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      border: 1px solid var(--antique-bronze);
+      color: var(--ivory-white);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition-fast);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--imperial-gold);
+      color: var(--imperial-gold);
+      background: rgba(212, 175, 55, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       6. ABOUT & EXPANDED IDENTITY
+       ========================================================================== */
+    .about-card {
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 30px;
+      width: 60px;
+      height: 2px;
+      background: var(--imperial-gold);
+    }
+
+    .about-bio {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ivory-white);
+      margin-bottom: 1.5rem;
+    }
+
+    .identity-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px dashed var(--antique-bronze);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--imperial-gold);
+      transition: var(--transition-fast);
+    }
+
+    .identity-toggle-btn:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--imperial-gold);
+    }
+
+    .expanded-identity-panel {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: var(--obsidian-900);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-sm);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      transition: var(--transition-normal);
+    }
+
+    .expanded-identity-panel.hidden {
+      display: none;
+    }
+
+    .identity-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .identity-field-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ivory-600);
+      letter-spacing: 1px;
+    }
+
+    .identity-field-val {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--ivory-white);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       7. INTELLIGENCE PANELS (DOMAINS)
+       ========================================================================== */
+    .domain-panels-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .intel-panel {
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition-normal);
+    }
+
+    .intel-panel.open {
+      border-color: var(--imperial-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .intel-panel-header {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .intel-panel-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .intel-panel-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--imperial-gold);
+      font-weight: 700;
+    }
+
+    .intel-panel-title {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ivory-white);
+    }
+
+    .intel-panel-sub {
+      font-size: 0.85rem;
+      color: var(--ivory-400);
+      margin-top: 0.2rem;
+    }
+
+    .intel-panel-icon-toggle {
+      font-family: var(--font-mono);
+      font-size: 1.2rem;
+      color: var(--antique-bronze);
+      transition: transform var(--transition-fast);
+    }
+
+    .intel-panel.open .intel-panel-icon-toggle {
+      transform: rotate(45deg);
+      color: var(--imperial-gold);
+    }
+
+    .intel-panel-content {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      border-top: 1px solid var(--obsidian-700);
+      display: none;
+    }
+
+    .intel-panel.open .intel-panel-content {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scope-list {
+      list-style: none;
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .scope-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--ivory-400);
+    }
+
+    .scope-item::before {
+      content: '◈';
+      color: var(--imperial-gold);
+      font-size: 0.8rem;
+      margin-top: 0.15rem;
+    }
+
+    /* ==========================================================================
+       8. AI LAB (CENTRAL FOCAL ARCHITECTURE)
+       ========================================================================== */
+    .ai-lab-section {
+      background: linear-gradient(180deg, var(--obsidian-900) 0%, #0e1319 50%, var(--obsidian-900) 100%);
+      padding: 3rem 0;
+      position: relative;
+    }
+
+    .ai-emblem-badge {
+      display: block;
+      margin: 0 auto 1rem auto;
+      width: 48px;
+      height: 48px;
+    }
+
+    .ai-thesis-quote {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 2.5rem auto;
+      font-size: 1.05rem;
+      color: var(--ivory-white);
+      line-height: 1.75;
+    }
+
+    .ai-pipeline-box {
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .pipeline-step-buttons {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .step-btn {
+      padding: 0.6rem 0.4rem;
+      background: var(--obsidian-900);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-align: center;
+      color: var(--ivory-400);
+      transition: var(--transition-fast);
+    }
+
+    .step-btn:hover, .step-btn.active {
+      border-color: var(--imperial-gold);
+      color: var(--imperial-gold);
+      background: rgba(212, 175, 55, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .step-btn.jade:hover, .step-btn.jade.active {
+      border-color: var(--jade-green);
+      color: var(--jade-green);
+      background: rgba(0, 200, 150, 0.08);
+    }
+
+    .step-btn.cyan:hover, .step-btn.cyan.active {
+      border-color: var(--cyber-cyan);
+      color: var(--cyber-cyan);
+      background: rgba(54, 215, 232, 0.08);
+    }
+
+    .pipeline-detail-card {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      background: var(--obsidian-900);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-sm);
+    }
+
+    .ai-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .ai-pillar-card {
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: var(--transition-normal);
+    }
+
+    .ai-pillar-card:hover {
+      border-color: var(--antique-bronze);
+      transform: translateY(-3px);
+    }
+
+    .ai-pillar-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--imperial-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .ai-pillar-desc {
+      font-size: 0.9rem;
+      color: var(--ivory-400);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       9. ARSENAL & INTERACTIVE SKILL TREE
+       ========================================================================== */
+    .skills-rack {
+      margin-bottom: 2.5rem;
+    }
+
+    .rack-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--antique-bronze);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .skill-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--ivory-white);
+      transition: var(--transition-fast);
+    }
+
+    .skill-pill:hover, .skill-pill.selected {
+      border-color: var(--imperial-gold);
+      background: rgba(212, 175, 55, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .skill-badge {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+      background: var(--obsidian-700);
+      color: var(--ivory-400);
+      text-transform: uppercase;
+    }
+
+    .skill-pill.core .skill-badge { background: rgba(212, 175, 55, 0.15); color: var(--imperial-gold); }
+    .skill-pill.engine .skill-badge { background: rgba(0, 200, 150, 0.15); color: var(--jade-green); }
+    .skill-pill.script .skill-badge { background: rgba(140, 107, 50, 0.2); color: var(--antique-bronze); }
+
+    .skill-inspector-card {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: var(--obsidian-800);
+      border: 1px solid var(--imperial-gold);
+      border-radius: var(--radius-md);
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .skill-inspector-card.open {
+      display: block;
+    }
+
+    /* ==========================================================================
+       10. PROJECT ARCHIVE & MODAL
+       ========================================================================== */
+    .project-filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .filter-tab {
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ivory-400);
+      transition: var(--transition-fast);
+    }
+
+    .filter-tab:hover, .filter-tab.active {
+      border-color: var(--imperial-gold);
+      color: var(--imperial-gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: var(--antique-bronze);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--cyber-cyan);
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--imperial-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--ivory-400);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: var(--obsidian-900);
+      border: 1px solid var(--obsidian-700);
+      border-radius: 2px;
+      color: var(--ivory-400);
+    }
+
+    /* Modal System */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 7, 10, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-normal);
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-window {
+      width: 100%;
+      max-width: 680px;
+      background: var(--obsidian-900);
+      border: 1px solid var(--imperial-gold);
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      transform: scale(0.95);
+      transition: transform var(--transition-normal);
+    }
+
+    .modal-backdrop.open .modal-window {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      font-size: 1.5rem;
+      color: var(--ivory-400);
+      line-height: 1;
+      transition: var(--transition-fast);
+    }
+
+    .modal-close-btn:hover {
+      color: var(--imperial-gold);
+    }
+
+    /* ==========================================================================
+       11. MILESTONES & COMMUNITY
+       ========================================================================== */
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+
+    .milestone-item {
+      cursor: pointer;
+      transition: transform var(--transition-fast);
+    }
+
+    .milestone-item:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ==========================================================================
+       12. TIMELINE & CAREER RECORD
+       ========================================================================== */
+    .timeline-container {
+      position: relative;
+      padding-left: 2rem;
+      margin-left: 1rem;
+      border-left: 2px solid var(--obsidian-700);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: calc(-2rem - 6px);
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--imperial-gold);
+      box-shadow: 0 0 8px var(--imperial-gold);
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyber-cyan);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--ivory-white);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--ivory-400);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       13. COMMAND PALETTE (CTRL + K)
+       ========================================================================== */
+    #command-palette {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 7, 10, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 10001;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 15vh;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-fast);
+    }
+
+    #command-palette.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .palette-box {
+      width: 100%;
+      max-width: 580px;
+      background: var(--obsidian-900);
+      border: 1px solid var(--imperial-gold);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .palette-input {
+      width: 100%;
+      padding: 1.1rem 1.25rem;
+      background: var(--obsidian-800);
+      border: none;
+      border-bottom: 1px solid var(--obsidian-700);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--ivory-white);
+      outline: none;
+    }
+
+    .palette-list {
+      max-height: 320px;
+      overflow-y: auto;
+      list-style: none;
+    }
+
+    .palette-item {
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--ivory-400);
+      cursor: pointer;
+      border-bottom: 1px solid rgba(27, 33, 41, 0.5);
+      transition: var(--transition-fast);
+    }
+
+    .palette-item:hover, .palette-item.selected {
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--imperial-gold);
+    }
+
+    /* ==========================================================================
+       14. CONTACT & FOOTER
+       ========================================================================== */
+    .contact-card {
+      background: var(--obsidian-800);
+      border: 1px solid var(--obsidian-700);
+      border-radius: var(--radius-md);
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .contact-headline {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--imperial-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-desc {
+      font-size: 1rem;
+      color: var(--ivory-400);
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--obsidian-900);
+      border: 1px solid var(--jade-green);
+      color: var(--jade-green);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      z-index: 10005;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .site-footer {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       15. RESPONSIVE DESIGN (MOBILE FIRST / MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .pipeline-step-buttons { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .pipeline-step-buttons { grid-template-columns: repeat(2, 1fr); }
+      .hero-ctas { flex-direction: column; width: 100%; }
+      .btn-gold, .btn-outline { width: 100%; justify-content: center; }
+      .section-header { font-size: 1.45rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      #opening-sequence { display: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       OPENING SEQUENCE (Bỏ qua được hoặc tự tắt theo localStorage / reduced-motion)
+       ========================================================================== -->
+  <div id="opening-sequence">
+    <img src="./assets/emblem-dongson.svg" alt="Dong Son Emblem" class="intro-star-pulse">
+    <div class="intro-title">VÔ THIÊN</div>
+    <div class="intro-status" id="intro-status-text">INITIALIZING DIGITAL ARSENAL...</div>
+    <div class="intro-progress-bar">
+      <div class="intro-progress-fill" id="intro-progress-fill"></div>
+    </div>
+    <button class="intro-skip-btn" id="btn-skip-intro">ENTER SYSTEM [SPACE]</button>
+  </div>
+
+  <!-- ==========================================================================
+       NAVIGATION & COMMAND BAR
+       ========================================================================== -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-brand">
+        <img src="./assets/emblem-dongson.svg" alt="" width="28" height="28">
+        <span>VÔ THIÊN</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="main-nav-links">
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#domains" class="nav-link">DOMAINS</a></li>
+          <li><a href="#ai-lab" class="nav-link">AI LAB</a></li>
+          <li><a href="#arsenal" class="nav-link">ARSENAL</a></li>
+          <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+          <li><a href="#milestones" class="nav-link">MILESTONES</a></li>
+          <li><a href="#timeline" class="nav-link">TIMELINE</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="action-btn" id="btn-command-palette" title="Open Command Palette (Ctrl+K)">
+          <span>⌘</span>
+          <span style="font-size: 0.7rem;">CMD</span>
+        </button>
+        <button class="action-btn" id="btn-toggle-theme" title="Toggle Theme (Dark / Giấy Dó)">
+          <span id="theme-icon">☼</span>
+        </button>
+        <button class="mobile-menu-btn" id="btn-mobile-menu" aria-label="Toggle mobile menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (DIGITAL IDENTITY)
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <!-- Hero Stack: Banner -> Wordmark -> Typing Tagline -->
+        <div class="hero-banner-wrap">
+          <img src="./assets/vothien-banner.svg" alt="VÔ THIÊN — From Bronze to Code" width="880" height="320">
+        </div>
+        <div class="hero-wordmark-wrap">
+          <img src="./assets/vothien-wordmark.svg" alt="VÔ THIÊN — VoThien" width="880" height="220">
+        </div>
+        <div class="hero-typing-wrap">
+          <span id="typing-text">Long Phụng trình tường — Khơi nguồn thuật toán</span>
+          <span class="typing-cursor"></span>
+        </div>
+
+        <div class="hero-status-pill">
+          SYSTEM ONLINE · LOCALIZATION &amp; AI ARCHITECTURE
+        </div>
+
+        <p class="hero-greeting">
+          Đọc ngôn ngữ cũ, dựng lại thành hệ thống mới. Tiếng trống đồng từ nghìn năm trước hôm nay hòa vào từng xung nhịp trong mạch điện, giải mã tài nguyên game và tự động hóa thông minh.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#about" class="btn-gold">EXPLORE MY WORLD ◈</a>
+          <a href="#projects" class="btn-outline">VIEW PROJECTS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME & EXPANDED IDENTITY
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-header">
+          <img src="./assets/icon-domains.svg" alt=""> Về Tôi — About Me
+        </h2>
+        <div class="epigraph">Giải mã trước, dựng lại sau.</div>
+
+        <div class="about-card">
+          <p class="about-bio">
+            Tôi là <strong>Vô Thiên (VoThien)</strong> — một kỹ sư phần mềm tập trung vào giải mã cấu trúc dữ liệu nhị phân (<strong>Game Localization &amp; Reverse Engineering</strong>), tối ưu hóa hiệu năng (<strong>Modding &amp; Profiling</strong>), vận hành hạ tầng máy chủ (<strong>Dedicated Server Architecture</strong>) và xây dựng kiến trúc trí tuệ nhân tạo (<strong>AI Engineering &amp; Agent Orchestration</strong>).
+          </p>
+          <p class="about-bio" style="margin-bottom: 0;">
+            Tôi không tiếp cận công nghệ như một người dùng thụ động hay một danh sách câu lệnh ngẫu hứng. Mục tiêu của tôi là kiểm soát chặt chẽ từng tệp tài nguyên, thiết kế các quy trình tự động hóa có thể kiểm chứng và bảo tồn tính toàn vẹn của dữ liệu trong mọi hệ thống.
+          </p>
+
+          <!-- Expanded Identity Toggle -->
+          <div style="margin-top: 1.5rem;">
+            <button class="identity-toggle-btn" id="btn-toggle-identity" aria-expanded="false">
+              <span>◈</span> <span id="identity-btn-text">MỞ RỘNG DANH TÍNH (EXPANDED IDENTITY)</span>
+            </button>
+          </div>
+
+          <div class="expanded-identity-panel hidden" id="expanded-identity-panel">
+            <div class="identity-field">
+              <span class="identity-field-label">FULL NAME</span>
+              <span class="identity-field-val">Trần Viết Thành</span>
+            </div>
+            <div class="identity-field">
+              <span class="identity-field-label">SPECIALIZATION</span>
+              <span class="identity-field-val">Software Engineering</span>
+            </div>
+            <div class="identity-field">
+              <span class="identity-field-label">ACADEMIC ALMA MATER</span>
+              <span class="identity-field-val">Vietnam Maritime University (VMU)</span>
+            </div>
+            <div class="identity-field">
+              <span class="identity-field-label">DISCORD CONTACT</span>
+              <span class="identity-field-val">vothien0143</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TECHNICAL DOMAINS (INTELLIGENCE PANELS)
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="domains" class="domains-section">
+      <div class="container">
+        <h2 class="section-header">
+          <img src="./assets/icon-domains.svg" alt=""> Lĩnh Vực Chuyên Môn — Technical Domains
+        </h2>
+        <div class="epigraph">Mỗi tệp tin là một ngôn ngữ chưa được đọc.</div>
+
+        <div class="domain-panels-grid">
+          <!-- Panel 1: Localization -->
+          <div class="intel-panel open" id="panel-1">
+            <button class="intel-panel-header" onclick="togglePanel('panel-1')" aria-expanded="true">
+              <div class="intel-panel-title-wrap">
+                <span class="intel-panel-num">01</span>
+                <div>
+                  <div class="intel-panel-title">Game Localization &amp; Reverse Engineering</div>
+                  <div class="intel-panel-sub">Trích xuất, giải mã và tái cấu trúc tài nguyên game đa engine</div>
+                </div>
+              </div>
+              <span class="intel-panel-icon-toggle">+</span>
+            </button>
+            <div class="intel-panel-content">
+              <p style="color: var(--ivory-400); font-size: 0.95rem;">
+                Phân tích sâu các định dạng container nhị phân, giải mã archive độc quyền và xây dựng pipeline Việt hóa bảo toàn cấu trúc dữ liệu.
+              </p>
+              <ul class="scope-list">
+                <li class="scope-item">Asset Extraction &amp; Repacking trên Unity, Ren'Py, RPG Maker, Kirikiri</li>
+                <li class="scope-item">Font Texture, Signed Distance Field (SDF) &amp; TextMeshPro modification</li>
+                <li class="scope-item">Bảo toàn 100% placeholder, format tags (&lt;color&gt;, &lt;b&gt;) và biến số ({0}, %s)</li>
+                <li class="scope-item">Kiểm thử encoding, phân tích byte-code script và logic hội thoại</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 2: Modding -->
+          <div class="intel-panel" id="panel-2">
+            <button class="intel-panel-header" onclick="togglePanel('panel-2')" aria-expanded="false">
+              <div class="intel-panel-title-wrap">
+                <span class="intel-panel-num">02</span>
+                <div>
+                  <div class="intel-panel-title">Game Modding &amp; Performance Optimization</div>
+                  <div class="intel-panel-sub">Can thiệp runtime logic, mở rộng tính năng và khắc phục điểm nghẽn</div>
+                </div>
+              </div>
+              <span class="intel-panel-icon-toggle">+</span>
+            </button>
+            <div class="intel-panel-content">
+              <p style="color: var(--ivory-400); font-size: 0.95rem;">
+                Can thiệp logic gameplay có chủ đích thông qua script hook và plugin, kết hợp đo đạc và tối ưu hiệu năng bộ nhớ.
+              </p>
+              <ul class="scope-list">
+                <li class="scope-item">Xây dựng custom tools, launcher và script mở rộng tính năng trò chơi</li>
+                <li class="scope-item">Phân tích điểm nghẽn hiệu năng, FPS profiling và phát hiện rò rỉ bộ nhớ</li>
+                <li class="scope-item">Đánh giá render behavior và debug xung đột tương thích nền tảng</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 3: Server -->
+          <div class="intel-panel" id="panel-3">
+            <button class="intel-panel-header" onclick="togglePanel('panel-3')" aria-expanded="false">
+              <div class="intel-panel-title-wrap">
+                <span class="intel-panel-num">03</span>
+                <div>
+                  <div class="intel-panel-title">Game Server Architecture</div>
+                  <div class="intel-panel-sub">Thiết lập, vận hành và giám sát máy chủ chuyên dụng</div>
+                </div>
+              </div>
+              <span class="intel-panel-icon-toggle">+</span>
+            </button>
+            <div class="intel-panel-content">
+              <p style="color: var(--ivory-400); font-size: 0.95rem;">
+                Triển khai Dedicated Server ổn định, cấu hình networking độ trễ thấp và sao lưu dữ liệu người dùng tự động.
+              </p>
+              <ul class="scope-list">
+                <li class="scope-item">Dedicated Server deployment, routing và tối ưu hóa băng thông</li>
+                <li class="scope-item">Database operation, tự động hóa backup và giám sát tài nguyên CPU/RAM</li>
+                <li class="scope-item">Xử lý sự cố mạng, bảo đảm tính sẵn sàng cao và khả năng phục hồi sau thảm họa</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 4: Security & QA -->
+          <div class="intel-panel" id="panel-4">
+            <button class="intel-panel-header" onclick="togglePanel('panel-4')" aria-expanded="false">
+              <div class="intel-panel-title-wrap">
+                <span class="intel-panel-num">04</span>
+                <div>
+                  <div class="intel-panel-title">Security Research &amp; QA Testing</div>
+                  <div class="intel-panel-sub">Rà soát lỗ hổng ủy quyền và kiểm thử chất lượng phần mềm uTest</div>
+                </div>
+              </div>
+              <span class="intel-panel-icon-toggle">+</span>
+            </button>
+            <div class="intel-panel-content">
+              <p style="color: var(--ivory-400); font-size: 0.95rem;">
+                Kiểm thử chức năng chuyên sâu, tái hiện lỗi với bằng chứng xác thực và thẩm định an toàn logic hệ thống.
+              </p>
+              <ul class="scope-list">
+                <li class="scope-item">Thực hiện kiểm thử QA phần mềm trên nền tảng uTest chuyên nghiệp</li>
+                <li class="scope-item">Phân loại mức độ nghiêm trọng lỗi, quy trình tái hiện (reproduction steps) chuẩn</li>
+                <li class="scope-item">Vulnerability Assessment và regression testing xác thực các bản vá bảo mật</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AI LAB — FOCAL AREA (PIPELINE & AGENT ORCHESTRATION)
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="ai-lab" class="ai-lab-section">
+      <div class="container">
+        <img src="./assets/emblem-dongson.svg" alt="Dong Son Emblem" class="ai-emblem-badge">
+
+        <h2 class="section-header" style="justify-content: center; text-align: center;">
+          <img src="./assets/icon-ai.svg" alt=""> AI Engineering &amp; Intelligent Automation
+        </h2>
+        <div class="epigraph" style="text-align: center;">
+          Không chỉ ra lệnh cho mô hình — thiết kế cả quy trình quanh nó.
+        </div>
+
+        <p class="ai-thesis-quote">
+          AI trong hệ thống của tôi không phải là các prompt ngẫu hứng. Đây là <strong>kỹ thuật tích hợp hệ thống có kiểm soát</strong>: mô hình ngôn ngữ lớn (LLM) được ràng buộc bởi schema dữ liệu chặt chẽ, ngữ cảnh nhiều lớp và bộ xác thực tự động để đảm bảo đầu ra lossless 100%.
+        </p>
+
+        <!-- 7-Stage Interactive Pipeline -->
+        <div class="ai-pipeline-box">
+          <img src="./assets/ai-pipeline.svg" alt="AI-Assisted Game Localization Pipeline Diagram" width="880" height="260">
+
+          <div class="pipeline-step-buttons">
+            <button class="step-btn active" onclick="selectPipelineStep(1)">01 Extraction</button>
+            <button class="step-btn" onclick="selectPipelineStep(2)">02 Context</button>
+            <button class="step-btn jade" onclick="selectPipelineStep(3)">03 LLM Engine</button>
+            <button class="step-btn jade" onclick="selectPipelineStep(4)">04 Terminology</button>
+            <button class="step-btn cyan" onclick="selectPipelineStep(5)">05 Validation</button>
+            <button class="step-btn cyan" onclick="selectPipelineStep(6)">06 QA Review</button>
+            <button class="step-btn cyan" onclick="selectPipelineStep(7)">07 Export</button>
+          </div>
+
+          <div class="pipeline-detail-card" id="pipeline-detail-card">
+            <div style="font-family: var(--font-display); font-size: 1.15rem; color: var(--imperial-gold); margin-bottom: 0.4rem;" id="step-card-title">
+              Stage 01: Source Asset Extraction &amp; Sanitization
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ivory-400); margin-bottom: 0.5rem;" id="step-card-desc">
+              Trích xuất dữ liệu chuỗi hội thoại thô từ container nhị phân của engine, tách biệt cấu trúc JSON keys với văn bản hiển thị và ghi nhận metadata người nói.
+            </p>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyber-cyan);" id="step-card-meta">
+              INPUT: Raw binary archives (.assets, .rpa) ➔ OUTPUT: Standardized AST / JSON Key-Value
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Architecture Pillars -->
+        <div class="ai-pillars-grid">
+          <div class="ai-pillar-card">
+            <div class="ai-pillar-title">1. Structured Output</div>
+            <div class="ai-pillar-desc">
+              Ép buộc LLM trả về đúng cấu trúc JSON/YAML có thể parse được ngay lập tức, sử dụng few-shot examples và schema constraints nghiêm ngặt.
+            </div>
+          </div>
+
+          <div class="ai-pillar-card">
+            <div class="ai-pillar-title">2. Prompt Chaining</div>
+            <div class="ai-pillar-desc">
+              Phân rã tác vụ dịch và localization thành chuỗi vi tác vụ: phân tích thể loại ➔ dịch thô ➔ đồng bộ glossary ➔ kiểm tra thẻ nhúng.
+            </div>
+          </div>
+
+          <div class="ai-pillar-card">
+            <div class="ai-pillar-title">3. Model Context Protocol</div>
+            <div class="ai-pillar-desc">
+              Tích hợp MCP, trao quyền cho AI tương tác với GitHub, hệ thống file và database để tự động kiểm thử và cập nhật tiến độ bản dịch.
+            </div>
+          </div>
+
+          <div class="ai-pillar-card">
+            <div class="ai-pillar-title">4. Persona Naturalization</div>
+            <div class="ai-pillar-desc">
+              Nhân hóa văn phong đối thoại: biến bản dịch máy móc thành lời thoại sống động, giữ đúng chất cổ phong kiếm hiệp hoặc khẩu khí nhân vật.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ARSENAL (SKILLS SYSTEM)
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="arsenal" class="arsenal-section">
+      <div class="container">
+        <h2 class="section-header">
+          <img src="./assets/icon-reverse.svg" alt=""> Hệ Thống Công Cụ — Arsenal &amp; Tech Stack
+        </h2>
+        <div class="epigraph">Nền móng vững, công cụ tùy việc.</div>
+
+        <!-- Rack 1: Core Systems -->
+        <div class="skills-rack">
+          <div class="rack-title">CORE SYSTEMS PROGRAMMING</div>
+          <div class="skill-pills-wrap">
+            <button class="skill-pill core" onclick="inspectSkill('C', 'Ngôn ngữ lập trình hệ thống nền tảng, quản lý bộ nhớ trực tiếp và cấu trúc dữ liệu cơ bản.', 'CORE SYSTEMS')">
+              <span>C</span> <span class="skill-badge">CORE</span>
+            </button>
+            <button class="skill-pill core" onclick="inspectSkill('C++', 'Lập trình hướng đối tượng, templates, quản lý tài nguyên và giải mã thư viện nhị phân game.', 'CORE SYSTEMS')">
+              <span>C++</span> <span class="skill-badge">CORE</span>
+            </button>
+            <button class="skill-pill core" onclick="inspectSkill('C#', 'Phát triển công cụ xử lý asset Unity, can thiệp logic Mono/IL2CPP và WinForms/WPF tooling.', 'CORE SYSTEMS')">
+              <span>C#</span> <span class="skill-badge">CORE</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Rack 2: Scripting & Engines -->
+        <div class="skills-rack">
+          <div class="rack-title">SCRIPTING &amp; GAME ENGINE ECOSYSTEM</div>
+          <div class="skill-pills-wrap">
+            <button class="skill-pill script" onclick="inspectSkill('Python', 'Viết công cụ tự động hóa giải nén file, xử lý AST và pipeline tích hợp API mô hình AI.', 'AUTOMATION')">
+              <span>Python</span> <span class="skill-badge">WORKFLOW</span>
+            </button>
+            <button class="skill-pill script" onclick="inspectSkill('Lua', 'Scripting gameplay logic, modding các tựa game sử dụng engine nhúng Lua.', 'SCRIPTING')">
+              <span>Lua</span> <span class="skill-badge">MODDING</span>
+            </button>
+            <button class="skill-pill script" onclick="inspectSkill('JavaScript / TypeScript', 'Xây dựng giao diện web, modding RPG Maker MV/MZ và tooling frontend an toàn kiểu dữ liệu.', 'WEB / ENGINE')">
+              <span>TypeScript</span> <span class="skill-badge">TOOLING</span>
+            </button>
+            <button class="skill-pill script" onclick="inspectSkill('Ruby', 'Can thiệp mã nguồn RGSS của RPG Maker VX Ace và xử lý tệp tin cấu hình.', 'ENGINE SCRIPT')">
+              <span>Ruby</span> <span class="skill-badge">LEGACY</span>
+            </button>
+            <button class="skill-pill engine" onclick="inspectSkill('Unity Engine', 'Khai thác định dạng .assets, bundle file, TextMeshPro SDF font và Mono assembly patching.', 'ENGINE')">
+              <span>Unity</span> <span class="skill-badge">ENGINE</span>
+            </button>
+            <button class="skill-pill engine" onclick="inspectSkill('Ren\'Py Engine', 'Dịch ngược và xử lý tệp .rpa, script .rpy/.rpyc trong các dự án Visual Novel lớn.', 'ENGINE')">
+              <span>Ren'Py</span> <span class="skill-badge">ENGINE</span>
+            </button>
+            <button class="skill-pill engine" onclick="inspectSkill('Unreal Engine', 'Khảo sát cấu trúc package .pak, localization manifest và uasset parsing.', 'ENGINE')">
+              <span>Unreal Engine</span> <span class="skill-badge">EXPLORATION</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Inspector Drawer Card -->
+        <div class="skill-inspector-card" id="skill-inspector-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <div style="font-family: var(--font-display); font-size: 1.25rem; color: var(--imperial-gold);" id="inspector-name">
+              C++ Architecture
+            </div>
+            <span class="skill-badge" id="inspector-badge" style="background: rgba(212, 175, 55, 0.2); color: var(--imperial-gold);">CORE</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--ivory-white); line-height: 1.6;" id="inspector-desc">
+            Chọn một kỹ năng bất kỳ trong kệ để xem thông tin chi tiết về phạm vi ứng dụng trong các dự án.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECT ARCHIVE (PORTFOLIO FILTER & MODAL)
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <h2 class="section-header">
+          <img src="./assets/icon-modding.svg" alt=""> Kho Dự Án — Project Archive
+        </h2>
+        <div class="epigraph">Kiến trúc hóa giải pháp, thực chứng qua sản phẩm.</div>
+
+        <div class="project-filter-tabs">
+          <button class="filter-tab active" onclick="filterProjects('ALL')">ALL (<span id="count-all">4</span>)</button>
+          <button class="filter-tab" onclick="filterProjects('LOCALIZATION')">LOCALIZATION (<span id="count-loc">1</span>)</button>
+          <button class="filter-tab" onclick="filterProjects('AI')">AI &amp; AUTOMATION (<span id="count-ai">2</span>)</button>
+          <button class="filter-tab" onclick="filterProjects('SYSTEM')">SYSTEM / WEB (<span id="count-sys">1</span>)</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1: Localization Pipeline -->
+          <div class="project-card" data-category="LOCALIZATION">
+            <div>
+              <div class="project-tag">VT-PROJ-01 · LOCALIZATION</div>
+              <div class="project-title">Game Localization Engine Pipeline</div>
+              <div class="project-desc">
+                Hệ thống tự động hóa trích xuất dữ liệu chuỗi hội thoại, xử lý font chữ tiếng Việt có dấu và đóng gói ngược lại vào asset container mà không làm hỏng logic gốc.
+              </div>
+            </div>
+            <div>
+              <div class="project-techs">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">JSON AST</span>
+              </div>
+              <button class="btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem;" onclick="openProjectModal('VT-PROJ-01')">
+                EXPLORE ARCHITECTURE ◈
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: AI Agent & Prompt Architecture -->
+          <div class="project-card" data-category="AI">
+            <div>
+              <div class="project-tag">VT-PROJ-02 · AI ARCHITECTURE</div>
+              <div class="project-title">AI Prompt &amp; Skill Orchestrator</div>
+              <div class="project-desc">
+                Hệ thống skill chuyên biệt cho tác nhân AI, kết hợp phân tích ngữ cảnh, điều chỉnh văn phong tự nhiên theo persona và kết nối các công cụ ngoài thông qua MCP.
+              </div>
+            </div>
+            <div>
+              <div class="project-techs">
+                <span class="tech-tag">MCP Protocol</span>
+                <span class="tech-tag">Prompt Chaining</span>
+                <span class="tech-tag">Node.js</span>
+              </div>
+              <button class="btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem;" onclick="openProjectModal('VT-PROJ-02')">
+                EXPLORE ARCHITECTURE ◈
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: Dedicated Game Server System -->
+          <div class="project-card" data-category="SYSTEM">
+            <div>
+              <div class="project-tag">VT-PROJ-03 · SERVER &amp; OPS</div>
+              <div class="project-title">High-Availability Game Server Infrastructure</div>
+              <div class="project-desc">
+                Cụm máy chủ game chuyên dụng phục vụ cộng đồng, tích hợp hệ thống giám sát tài nguyên thời gian thực, sao lưu dữ liệu tự động và bảo vệ đường truyền.
+              </div>
+            </div>
+            <div>
+              <div class="project-techs">
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">Networking</span>
+                <span class="tech-tag">Database Ops</span>
+              </div>
+              <button class="btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem;" onclick="openProjectModal('VT-PROJ-03')">
+                EXPLORE ARCHITECTURE ◈
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: Software QA & Bug Verification -->
+          <div class="project-card" data-category="AI">
+            <div>
+              <div class="project-tag">VT-PROJ-04 · QUALITY ASSURANCE</div>
+              <div class="project-title">Automated Dialogue QA &amp; uTest Flow</div>
+              <div class="project-desc">
+                Bộ công cụ kiểm tra tự động phát hiện lỗi tràn khung chữ, lỗi mất tag biến số và quy trình ghi nhận evidence tái hiện lỗi trên nền tảng uTest.
+              </div>
+            </div>
+            <div>
+              <div class="project-techs">
+                <span class="tech-tag">uTest Platform</span>
+                <span class="tech-tag">Validation Script</span>
+                <span class="tech-tag">Python</span>
+              </div>
+              <button class="btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 0.5rem;" onclick="openProjectModal('VT-PROJ-04')">
+                EXPLORE ARCHITECTURE ◈
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-backdrop" id="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-proj-title">
+      <div class="modal-window">
+        <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">×</button>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyber-cyan); margin-bottom: 0.25rem;" id="modal-proj-tag">
+          VT-PROJ-SPEC
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--imperial-gold); margin-bottom: 1rem;" id="modal-proj-title">
+          Project Architecture
+        </h3>
+        <div style="font-size: 0.95rem; color: var(--ivory-white); line-height: 1.7; margin-bottom: 1.5rem;" id="modal-proj-desc">
+          Mô tả chi tiết kiến trúc dự án.
+        </div>
+        <div style="border-top: 1px solid var(--obsidian-700); padding-top: 1rem;">
+          <h4 style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--antique-bronze); margin-bottom: 0.5rem;">KEY HIGHLIGHTS:</h4>
+          <ul id="modal-proj-highlights" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--ivory-400);">
+            <li>◈ Bảo toàn 100% placeholder logic trong quá trình biên dịch.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         MILESTONES & COMMUNITY CARDS
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="milestones" class="milestones-section">
+      <div class="container">
+        <h2 class="section-header" style="justify-content: center; text-align: center;">
+          <img src="./assets/icon-modding.svg" alt=""> Cột Mốc &amp; Cộng Đồng — Milestones
+        </h2>
+        <div class="epigraph" style="text-align: center;">Những con số có thật, nói thay lời.</div>
+
+        <div class="milestones-grid">
+          <div class="milestone-item" title="Click để xem chi tiết mốc 81+ dự án">
+            <img src="./assets/card-localization.svg" alt="81+ Game Localizations Completed" width="280" height="170">
+          </div>
+          <div class="milestone-item" title="Click để xem chi tiết 2 Discord servers">
+            <img src="./assets/card-community.svg" alt="2 Active Commercial & Community Discord Servers" width="280" height="170">
+          </div>
+          <div class="milestone-item" title="Click để xem chi tiết hoạt động uTest QA">
+            <img src="./assets/card-qa.svg" alt="uTest Security & QA Testing" width="280" height="170">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TIMELINE (CAREER & EVOLUTION)
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="timeline" class="timeline-section">
+      <div class="container">
+        <h2 class="section-header">
+          <img src="./assets/icon-server.svg" alt=""> Dòng Thời Gian — Engineering Timeline
+        </h2>
+        <div class="epigraph">Hành trình giải mã từ những dòng code đầu tiên.</div>
+
+        <div class="timeline-container">
+          <!-- Mốc 1 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-date">FOUNDATION &amp; ACADEMICS</div>
+            <div class="timeline-title">Software Engineering — ĐH Hàng hải Việt Nam (VMU)</div>
+            <div class="timeline-desc">
+              Xây dựng nền tảng khoa học máy tính vững chắc: C/C++, giải thuật, cấu trúc dữ liệu, kiến trúc máy tính và nguyên lý hệ điều hành.
+            </div>
+          </div>
+
+          <!-- Mốc 2 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-date">81+ COMPLETED PROJECTS</div>
+            <div class="timeline-title">Game Localization &amp; Binary Reverse Engineering</div>
+            <div class="timeline-desc">
+              Triển khai hơn 81 dự án Việt hóa game đa nền tảng, xây dựng bộ công cụ trích xuất tài nguyên tự động và chỉnh sửa font chữ tiếng Việt chuyên sâu.
+            </div>
+          </div>
+
+          <!-- Mốc 3 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-date">COMMUNITY &amp; INFRASTRUCTURE</div>
+            <div class="timeline-title">Commercial &amp; Community Discord Server Operations</div>
+            <div class="timeline-desc">
+              Sáng lập và điều hành hai máy chủ Discord phục vụ cộng đồng modding, giao dịch dịch vụ kỹ thuật và hỗ trợ người dùng vận hành server.
+            </div>
+          </div>
+
+          <!-- Mốc 4 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-date">ONGOING &amp; ADVANCED</div>
+            <div class="timeline-title">AI Engineering, Model Context Protocol &amp; QA</div>
+            <div class="timeline-desc">
+              Nghiên cứu kiến trúc prompt có cấu trúc, tích hợp hệ sinh thái AI Agent qua MCP và thực hiện kiểm thử phần mềm trên nền tảng uTest.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & COLLABORATION
+         ========================================================================== -->
+    <div class="container"><img src="./assets/divider.svg" alt="" class="section-divider"></div>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-headline">LET'S BUILD SOMETHING EXTRAORDINARY.</div>
+          <div class="epigraph" style="text-align: center;">Có việc hay, cứ gõ cửa.</div>
+          <p class="contact-desc">
+            Tôi luôn cởi mở trao đổi chuyên môn kỹ thuật, chia sẻ kinh nghiệm xử lý tài nguyên game và hợp tác xây dựng các giải pháp tự động hóa thông minh.
+          </p>
+
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ivory-400); margin-bottom: 1.5rem;">
+            LĨNH VỰC HỢP TÁC: Game Localization · Modding &amp; Tooling · AI Automation · Dedicated Server Ops · QA Testing
+          </p>
+
+          <div class="contact-buttons">
+            <button class="btn-gold" id="btn-copy-discord">
+              <span>DISCORD: vothien0143</span>
+              <span style="font-size: 0.75rem; opacity: 0.8;">[COPY]</span>
+            </button>
+            <!-- TODO: Thay YOUR_GITHUB_USERNAME bằng username GitHub chính thức -->
+            <a href="https://github.com/thanh116505-vothien" target="_blank" rel="noopener" class="btn-outline">
+              VIEW GITHUB PROFILE ↗
+            </a>
+            <button class="btn-outline" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+              BACK TO TOP ↑
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER (SEAL & ETHOS)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <img src="./assets/footer-seal.svg" alt="Từ Đồng Đến Mã — From Bronze to Code" width="880" height="120" style="margin: 0 auto 1rem auto;">
+      <p style="font-family: var(--font-display); font-style: italic; color: var(--antique-bronze); font-size: 1rem;">
+        Từ đồng đến mã — giữ lửa, truyền nhịp.
+      </p>
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ivory-600); margin-top: 0.5rem;">
+        &copy; VoThien (Vô Thiên). All rights reserved. Built with standard HTML5, CSS3 &amp; Vanilla TypeScript architecture.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast-msg">Đã sao chép Discord: vothien0143!</div>
+
+  <!-- ==========================================================================
+       COMMAND PALETTE DIALOG (CTRL + K)
+       ========================================================================== -->
+  <div id="command-palette" role="dialog" aria-modal="true" aria-label="Command Palette">
+    <div class="palette-box">
+      <input type="text" class="palette-input" id="palette-search" placeholder="Type a command or search section (e.g. 'AI', 'Projects')..." autocomplete="off">
+      <ul class="palette-list" id="palette-list">
+        <li class="palette-item" onclick="execCommand('about')"><span>Go to About Me</span><span style="font-size: 0.7rem; color: var(--antique-bronze);">#about</span></li>
+        <li class="palette-item" onclick="execCommand('domains')"><span>Explore Technical Domains</span><span style="font-size: 0.7rem; color: var(--antique-bronze);">#domains</span></li>
+        <li class="palette-item" onclick="execCommand('ai-lab')"><span>Open AI Lab &amp; Pipeline</span><span style="font-size: 0.7rem; color: var(--jade-green);">#ai-lab</span></li>
+        <li class="palette-item" onclick="execCommand('arsenal')"><span>Inspect Arsenal &amp; Tech Stack</span><span style="font-size: 0.7rem; color: var(--antique-bronze);">#arsenal</span></li>
+        <li class="palette-item" onclick="execCommand('projects')"><span>Browse Project Archive</span><span style="font-size: 0.7rem; color: var(--cyber-cyan);">#projects</span></li>
+        <li class="palette-item" onclick="execCommand('timeline')"><span>View Engineering Timeline</span><span style="font-size: 0.7rem; color: var(--antique-bronze);">#timeline</span></li>
+        <li class="palette-item" onclick="execCommand('copy-discord')"><span>Copy Discord Handle (vothien0143)</span><span style="font-size: 0.7rem; color: var(--imperial-gold);">CLIPBOARD</span></li>
+        <li class="palette-item" onclick="execCommand('toggle-theme')"><span>Toggle Theme (Dark / Giấy Dó)</span><span style="font-size: 0.7rem; color: var(--ivory-400);">THEME</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VANILLA JS INTERACTIVE ENGINE
+       ========================================================================== -->
+  <script>
+    /* 1. Project Specifications Database */
+    const PROJECT_DATA = {
+      'VT-PROJ-01': {
+        tag: 'VT-PROJ-01 · LOCALIZATION ARCHITECTURE',
+        title: 'Game Localization Engine Pipeline',
+        desc: 'Pipeline giải mã nhị phân và đóng gói bản địa hóa hoàn chỉnh. Giải quyết vấn đề gãy font chữ tiếng Việt, xung đột format tag và mã hóa đa engine (Unity, Ren\'Py, RPG Maker).',
+        highlights: [
+          'Trích xuất tự động và chuyển hóa sang định dạng AST/JSON chuẩn hóa.',
+          'Bảo toàn 100% placeholder {0}, %s, \\n và control codes.',
+          'Tích hợp Signed Distance Field (SDF) TextMeshPro font patcher.',
+          'Đã kiểm chứng thành công trên hơn 81 dự án Việt hóa thực tế.'
+        ]
+      },
+      'VT-PROJ-02': {
+        tag: 'VT-PROJ-02 · AI ARCHITECTURE',
+        title: 'AI Prompt & Skill Orchestrator',
+        desc: 'Hệ thống thiết kế Prompt chuyên biệt và phân rã vi tác vụ cho các Agent AI. Ràng buộc mô hình luôn xuất JSON có cấu trúc, hạn chế hallucination và kết nối công cụ qua Model Context Protocol (MCP).',
+        highlights: [
+          'Few-Shot Prompt Engineering kết hợp Schema Validation tự động.',
+          'Tích hợp giao thức Model Context Protocol (MCP) với GitHub và File System.',
+          'Bộ lọc văn phong loại bỏ triệt để 26 mẫu rập khuôn AI của blader/humanizer.',
+          'Hỗ trợ chuyển đổi linh hoạt giữa Local LLM và API đám mây.'
+        ]
+      },
+      'VT-PROJ-03': {
+        tag: 'VT-PROJ-03 · SERVER & INFRASTRUCTURE',
+        title: 'High-Availability Game Server Infrastructure',
+        desc: 'Cụm máy chủ game đa dịch vụ trên Linux, cấu hình tối ưu độ trễ mạng, cân bằng tải và thiết lập cơ chế sao lưu tự động cơ sở dữ liệu tiến trình người chơi.',
+        highlights: [
+          'Tối ưu hóa Kernel và networking parameters cho Dedicated Server.',
+          'Hệ thống tự động backup và khôi phục dữ liệu định kỳ.',
+          'Giám sát chỉ số tài nguyên và cảnh báo tức thời qua webhook Discord.',
+          'Phục vụ ổn định người dùng trong 2 cộng đồng máy chủ đang hoạt động.'
+        ]
+      },
+      'VT-PROJ-04': {
+        tag: 'VT-PROJ-04 · QUALITY ASSURANCE',
+        title: 'Automated Dialogue QA & uTest Verification Flow',
+        desc: 'Quy trình kiểm thử chất lượng bản địa hóa và phần mềm. Tự động quét lỗi tràn khung hiển thị, thiếu tag format và chuẩn hóa báo cáo tái hiện lỗi chuyên nghiệp trên uTest.',
+        highlights: [
+          'Quy trình kiểm thử chuẩn hóa: Reproduce ➔ Document ➔ Report ➔ Retest.',
+          'Script Python kiểm tra tính toàn vẹn của cặp tag mở/đóng trong tệp dịch.',
+          'Thu thập log và bằng chứng kiểm thử (evidence collection) chuẩn xác.',
+          'Áp dụng thực chiến trên nền tảng kiểm thử toàn cầu uTest.'
+        ]
+      }
+    };
+
+    /* 2. Pipeline Stages Database */
+    const PIPELINE_STAGES = {
+      1: {
+        title: 'Stage 01: Source Asset Extraction & Sanitization',
+        desc: 'Trích xuất dữ liệu chuỗi hội thoại thô từ container nhị phân của engine, tách biệt cấu trúc JSON keys với văn bản hiển thị và ghi nhận metadata người nói.',
+        meta: 'INPUT: Raw binary archives (.assets, .rpa) ➔ OUTPUT: Standardized AST / JSON Key-Value'
+      },
+      2: {
+        title: 'Stage 02: Context Analysis & Speaker Mapping',
+        desc: 'Xác định mối quan hệ nhân vật, thể loại game (tiên hiệp, kiếm hiệp, khoa học viễn tưởng) để định hình văn phong và danh xưng phù hợp trước khi đưa vào mô hình.',
+        meta: 'INPUT: Raw text + Speaker Lore ➔ OUTPUT: Enriched Context Prompt Graph'
+      },
+      3: {
+        title: 'Stage 03: LLM Engine Translation & Formatting',
+        desc: 'Mô hình ngôn ngữ lớn thực hiện chuyển ngữ có điều kiện, tuân thủ nghiêm ngặt định dạng schema JSON và giữ nguyên vẹn toàn bộ các biến số động.',
+        meta: 'INPUT: Context Prompt + Schema ➔ OUTPUT: Raw Localized JSON Stream'
+      },
+      4: {
+        title: 'Stage 04: Terminology & Glossary Enforcement',
+        desc: 'Đồng bộ hóa thuật ngữ đa tệp tin, đảm bảo tên riêng nhân vật, địa danh, chiêu thức và vật phẩm nhất quán trên toàn bộ trò chơi.',
+        meta: 'INPUT: Localized JSON + Global Glossary ➔ OUTPUT: Term-Consistent Text'
+      },
+      5: {
+        title: 'Stage 05: Placeholder & Control Tag Validation',
+        desc: 'Thuật toán regex quét tự động 100% key để phát hiện lỗi mất biến ({0}, %s), lỗi sai cú pháp thẻ màu (<color=...>) hoặc ký tự escape (\\n). Tự động kích hoạt retry nếu vi phạm.',
+        meta: 'INPUT: Term-Consistent Text ➔ OUTPUT: Lossless Verified JSON'
+      },
+      6: {
+        title: 'Stage 06: In-Game QA & TextMeshPro Font Review',
+        desc: 'Đưa tệp dịch đã kiểm thử vào game thực tế để thẩm định hiển thị: độ co giãn hộp thoại, kiểm tra lỗi ngắt dòng và đảm bảo font SDF không bị răng cưa.',
+        meta: 'INPUT: Lossless JSON ➔ OUTPUT: In-Game Render Verification'
+      },
+      7: {
+        title: 'Stage 07: Final JSON Export & Clean Repack',
+        desc: 'Đóng gói ngược dữ liệu hoàn thiện vào archive của engine, tạo patch cài đặt hoặc bộ mod sẵn sàng phân phối cho cộng đồng.',
+        meta: 'INPUT: In-Game Verified Data ➔ OUTPUT: Release-Ready Game Patch / Mod'
+      }
+    };
+
+    /* 3. Opening Sequence Controller */
+    const introEl = document.getElementById('opening-sequence');
+    const introFill = document.getElementById('intro-progress-fill');
+    const introStatus = document.getElementById('intro-status-text');
+
+    let hasSeenIntro = false;
+    try {
+      hasSeenIntro = localStorage.getItem('vothien_intro_seen') === 'true';
+    } catch (e) {}
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (hasSeenIntro || prefersReducedMotion) {
+      if (introEl) introEl.classList.add('hidden');
+    } else {
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 10;
+        if (introFill) introFill.style.width = progress + '%';
+        if (progress === 40 && introStatus) introStatus.textContent = 'CONNECTING DONG SON ARCHITECTURE...';
+        if (progress === 80 && introStatus) introStatus.textContent = 'SYSTEMS SYNCHRONIZED. READY.';
+        if (progress >= 100) {
+          clearInterval(interval);
+          setTimeout(() => closeIntro(), 400);
+        }
+      }, 140);
+    }
+
+    function closeIntro() {
+      if (introEl) {
+        introEl.classList.add('hidden');
+        try { localStorage.setItem('vothien_intro_seen', 'true'); } catch (e) {}
+      }
+    }
+
+    document.getElementById('btn-skip-intro')?.addEventListener('click', closeIntro);
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && introEl && !introEl.classList.contains('hidden')) {
+        closeIntro();
+      }
+    });
+
+    /* 4. Tagline Typing & Rotation */
+    const taglines = [
+      "Long Phụng trình tường — Khơi nguồn thuật toán",
+      "Game Localization — Giải mã ngôn ngữ số",
+      "AI Engineering — Beyond Prompting",
+      "Reverse Engineering — Understand. Analyze. Rebuild.",
+      "From Game Assets to Intelligent Automation"
+    ];
+    let tagIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typingEl = document.getElementById('typing-text');
+
+    function typeLoop() {
+      if (!typingEl) return;
+      const current = taglines[tagIdx];
+
+      if (isDeleting) {
+        charIdx--;
+        typingEl.textContent = current.substring(0, charIdx);
+      } else {
+        charIdx++;
+        typingEl.textContent = current.substring(0, charIdx);
+      }
+
+      let speed = isDeleting ? 30 : 65;
+
+      if (!isDeleting && charIdx === current.length) {
+        speed = 2400; // Pause at end of line
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        tagIdx = (tagIdx + 1) % taglines.length;
+        speed = 500;
+      }
+
+      setTimeout(typeLoop, speed);
+    }
+    typeLoop();
+
+    /* 5. Expanded Identity Toggle */
+    const idBtn = document.getElementById('btn-toggle-identity');
+    const idPanel = document.getElementById('expanded-identity-panel');
+    const idBtnText = document.getElementById('identity-btn-text');
+
+    idBtn?.addEventListener('click', () => {
+      const isHidden = idPanel.classList.toggle('hidden');
+      idBtn.setAttribute('aria-expanded', !isHidden);
+      idBtnText.textContent = isHidden ? 'MỞ RỘNG DANH TÍNH (EXPANDED IDENTITY)' : 'THU GỌN DANH TÍNH';
+    });
+
+    /* 6. Expandable Intelligence Panels (Accordion) */
+    function togglePanel(id) {
+      const panel = document.getElementById(id);
+      if (!panel) return;
+      const isOpen = panel.classList.toggle('open');
+      const btn = panel.querySelector('.intel-panel-header');
+      if (btn) btn.setAttribute('aria-expanded', isOpen);
+    }
+
+    /* 7. AI Pipeline Step Selector */
+    function selectPipelineStep(num) {
+      const data = PIPELINE_STAGES[num];
+      if (!data) return;
+
+      document.querySelectorAll('.step-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', (idx + 1) === num);
+      });
+
+      document.getElementById('step-card-title').textContent = data.title;
+      document.getElementById('step-card-desc').textContent = data.desc;
+      document.getElementById('step-card-meta').textContent = data.meta;
+    }
+
+    /* 8. Skill Inspector */
+    function inspectSkill(name, desc, badge) {
+      const card = document.getElementById('skill-inspector-card');
+      const nameEl = document.getElementById('inspector-name');
+      const badgeEl = document.getElementById('inspector-badge');
+      const descEl = document.getElementById('inspector-desc');
+
+      if (card && nameEl && badgeEl && descEl) {
+        nameEl.textContent = name;
+        badgeEl.textContent = badge;
+        descEl.textContent = desc;
+        card.classList.add('open');
+      }
+    }
+
+    /* 9. Project Filtering & Modal */
+    function filterProjects(cat) {
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.textContent.includes(cat));
+      });
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (cat === 'ALL' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openProjectModal(id) {
+      const proj = PROJECT_DATA[id];
+      if (!proj) return;
+
+      document.getElementById('modal-proj-tag').textContent = proj.tag;
+      document.getElementById('modal-proj-title').textContent = proj.title;
+      document.getElementById('modal-proj-desc').textContent = proj.desc;
+
+      const highlightsEl = document.getElementById('modal-proj-highlights');
+      highlightsEl.innerHTML = '';
+      proj.highlights.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = '◈ ' + item;
+        highlightsEl.appendChild(li);
+      });
+
+      const modal = document.getElementById('project-modal-backdrop');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal-backdrop');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('project-modal-backdrop')?.addEventListener('click', (e) => {
+      if (e.target.id === 'project-modal-backdrop') closeProjectModal();
+    });
+
+    /* 10. Copy Discord Handle & Toast */
+    const copyBtn = document.getElementById('btn-copy-discord');
+    const toast = document.getElementById('toast-msg');
+
+    function showToast(msg) {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+
+    copyBtn?.addEventListener('click', () => {
+      const handle = 'vothien0143';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(handle).then(() => {
+          showToast('Đã sao chép Discord: vothien0143 vào clipboard!');
+        }).catch(() => fallbackCopy(handle));
+      } else {
+        fallbackCopy(handle);
+      }
+    });
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Đã sao chép Discord: vothien0143!');
+      } catch (err) {
+        showToast('Discord ID: vothien0143');
+      }
+      document.body.removeChild(ta);
+    }
+
+    /* 11. Command Palette Controller (Ctrl + K) */
+    const palette = document.getElementById('command-palette');
+    const paletteSearch = document.getElementById('palette-search');
+    const paletteBtn = document.getElementById('btn-command-palette');
+
+    function openPalette() {
+      palette.classList.add('open');
+      paletteSearch.value = '';
+      paletteSearch.focus();
+    }
+
+    function closePalette() {
+      palette.classList.remove('open');
+    }
+
+    paletteBtn?.addEventListener('click', openPalette);
+    palette?.addEventListener('click', (e) => {
+      if (e.target.id === 'command-palette') closePalette();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        const tag = document.activeElement.tagName;
+        if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
+          e.preventDefault();
+          if (palette.classList.contains('open')) closePalette();
+          else openPalette();
+        }
+      }
+      if (e.key === 'Escape') {
+        closePalette();
+        closeProjectModal();
+      }
+    });
+
+    function execCommand(action) {
+      closePalette();
+      if (action === 'copy-discord') {
+        copyBtn?.click();
+      } else if (action === 'toggle-theme') {
+        toggleTheme();
+      } else {
+        const target = document.getElementById(action);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Palette search filter
+    paletteSearch?.addEventListener('input', (e) => {
+      const val = e.target.value.toLowerCase();
+      document.querySelectorAll('.palette-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(val) ? 'flex' : 'none';
+      });
+    });
+
+    /* 12. Theme Toggle (Dark / Giấy Dó) */
+    const themeBtn = document.getElementById('btn-toggle-theme');
+    const themeIcon = document.getElementById('theme-icon');
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      if (themeIcon) themeIcon.textContent = next === 'dark' ? '☼' : '☾';
+      try { localStorage.setItem('vothien_theme', next); } catch (e) {}
+    }
+
+    themeBtn?.addEventListener('click', toggleTheme);
+
+    // Load saved theme
+    try {
+      const savedTheme = localStorage.getItem('vothien_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (themeIcon) themeIcon.textContent = savedTheme === 'dark' ? '☼' : '☾';
+      }
+    } catch (e) {}
+
+    /* 13. Mobile Menu Toggle */
+    const mobileBtn = document.getElementById('btn-mobile-menu');
+    const navLinks = document.getElementById('main-nav-links');
+
+    mobileBtn?.addEventListener('click', () => {
+      if (!navLinks) return;
+      const isOpen = navLinks.style.display === 'flex';
+      navLinks.style.display = isOpen ? 'none' : 'flex';
+      if (!isOpen) {
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '64px';
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.background = 'var(--obsidian-950)';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.padding = '1.5rem';
+        navLinks.style.borderBottom = '1px solid var(--obsidian-700)';
+      }
+    });
+
+    // Close mobile menu on click nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 820 && navLinks) {
+          navLinks.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

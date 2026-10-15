@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Game Modding Icon</title>
+  <rect x="2" y="6" width="20" height="12" rx="4"/>
+  <path d="M6 12h4M8 10v4"/>
+  <circle cx="15.5" cy="10.5" r="1" fill="#D4AF37"/>
+  <circle cx="17.5" cy="13.5" r="1" fill="#D4AF37"/>
+</svg>

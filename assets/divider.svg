@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 28" width="880" height="28" fill="none">
+  <title>Dong Son Divider - Từ Đồng Đến Mã</title>
+  <desc>Ornamental divider with 14-ray Dong Son star, tangent dots, and tapered circuit traces</desc>
+  <defs>
+    <linearGradient id="div-gold-l" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#8C6B32" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="div-gold-r" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#8C6B32" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Tapered Line & Circuit Node -->
+  <circle cx="60" cy="14" r="2" fill="#8C6B32" opacity="0.6"/>
+  <line x1="60" y1="14" x2="80" y2="14" stroke="#8C6B32" stroke-width="1" opacity="0.6"/>
+  <circle cx="80" cy="14" r="1.5" fill="#36D7E8" opacity="0.8"/>
+  <line x1="80" y1="14" x2="400" y2="14" stroke="url(#div-gold-l)" stroke-width="1.5"/>
+  <polygon points="400,12 408,14 400,16" fill="#D4AF37"/>
+
+  <!-- Right Tapered Line & Circuit Node -->
+  <polygon points="480,12 472,14 480,16" fill="#D4AF37"/>
+  <line x1="480" y1="14" x2="800" y2="14" stroke="url(#div-gold-r)" stroke-width="1.5"/>
+  <circle cx="800" cy="14" r="1.5" fill="#36D7E8" opacity="0.8"/>
+  <line x1="800" y1="14" x2="820" y2="14" stroke="#8C6B32" stroke-width="1" opacity="0.6"/>
+  <circle cx="820" cy="14" r="2" fill="#8C6B32" opacity="0.6"/>
+
+  <!-- Center Dong Son Sun-Star Medallion -->
+  <g transform="translate(440, 14)">
+    <!-- Outer concentric ring -->
+    <circle cx="0" cy="0" r="13" stroke="#8C6B32" stroke-width="1" fill="#0B0D10"/>
+    <circle cx="0" cy="0" r="10.5" stroke="#D4AF37" stroke-width="0.8" stroke-dasharray="2, 1.5"/>
+    <!-- 14-ray star -->
+    <g fill="#D4AF37">
+      <!-- 14 rays generated symmetrically -->
+      <polygon points="0,-10 1.2,-4 0,-2 -1.2,-4"/>
+      <polygon points="0,10 1.2,4 0,2 -1.2,4"/>
+      <polygon points="-10,0 -4,1.2 -2,0 -4,-1.2"/>
+      <polygon points="10,0 4,1.2 2,0 4,-1.2"/>
+      <polygon points="-7.07,-7.07 -2,-3.5 -1.4,-1.4 -3.5,-2"/>
+      <polygon points="7.07,7.07 2,3.5 1.4,1.4 3.5,2"/>
+      <polygon points="-7.07,7.07 -3.5,2 -1.4,1.4 -2,3.5"/>
+      <polygon points="7.07,-7.07 3.5,-2 1.4,-1.4 2,-3.5"/>
+      <!-- intermediate rays -->
+      <polygon points="-9.24,-3.83 -3.5,-0.8 -1.8,-0.4 -3.2,-2.2"/>
+      <polygon points="9.24,3.83 3.5,0.8 1.8,0.4 3.2,2.2"/>
+      <polygon points="-3.83,-9.24 -0.8,-3.5 -0.4,-1.8 -2.2,-3.2"/>
+      <polygon points="3.83,9.24 0.8,3.5 0.4,1.8 2.2,3.2"/>
+      <polygon points="-3.83,9.24 -0.8,3.5 -0.4,1.8 -2.2,3.2"/>
+      <polygon points="3.83,-9.24 0.8,-3.5 0.4,-1.8 2.2,-3.2"/>
+    </g>
+    <!-- Center solar circle -->
+    <circle cx="0" cy="0" r="2.5" fill="#F1DE9B"/>
+    <circle cx="0" cy="0" r="1" fill="#0B0D10"/>
+  </g>
+</svg>

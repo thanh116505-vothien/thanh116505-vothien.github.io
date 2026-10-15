@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 640" width="1760" height="640" fill="none">
+  <title>VÔ THIÊN - From Bronze to Code Hero Banner</title>
+  <desc>Ly Dragon, Dong Son Bronze Drum, Golden Circuits and Cybernetic Nodes</desc>
+  <defs>
+    <!-- Background Vignette -->
+    <radialGradient id="bnr-vignette" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#12161B"/>
+      <stop offset="60%" stop-color="#0B0D10"/>
+      <stop offset="100%" stop-color="#05070A"/>
+    </radialGradient>
+
+    <!-- Bottom Seamless Fade into #0B0D10 -->
+    <linearGradient id="bnr-bottom-fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B0D10" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#0B0D10" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0B0D10" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Imperial Gold Gradient -->
+    <linearGradient id="bnr-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1DE9B"/>
+      <stop offset="45%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8C6B32"/>
+    </linearGradient>
+
+    <!-- Antique Bronze Gradient with Verdigris Patina -->
+    <linearGradient id="bnr-bronze" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C6B32"/>
+      <stop offset="50%" stop-color="#4A3818"/>
+      <stop offset="100%" stop-color="#00C896" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Cyan Signal Gradient -->
+    <linearGradient id="bnr-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C896"/>
+      <stop offset="100%" stop-color="#36D7E8"/>
+    </linearGradient>
+
+    <!-- Central Warm Glow -->
+    <radialGradient id="bnr-glow" cx="45%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.14"/>
+      <stop offset="50%" stop-color="#8C6B32" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0B0D10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Deep Obsidian Background Plate -->
+  <rect width="1760" height="640" fill="url(#bnr-vignette)"/>
+  <rect width="1760" height="640" fill="url(#bnr-glow)"/>
+
+  <!-- 2. Giant Dong Son Drum Sun-Star Disc (Center-Left, Faded Opacity 14%) -->
+  <g transform="translate(560, 320)" opacity="0.16">
+    <!-- Concentric Rings -->
+    <circle cx="0" cy="0" r="320" stroke="#8C6B32" stroke-width="2"/>
+    <circle cx="0" cy="0" r="290" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="6, 4"/>
+    <circle cx="0" cy="0" r="260" stroke="#8C6B32" stroke-width="2"/>
+    <circle cx="0" cy="0" r="220" stroke="#D4AF37" stroke-width="3" stroke-dasharray="2, 6"/>
+    <circle cx="0" cy="0" r="180" stroke="#8C6B32" stroke-width="2"/>
+    <circle cx="0" cy="0" r="140" stroke="#D4AF37" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="90" stroke="#8C6B32" stroke-width="2"/>
+    <circle cx="0" cy="0" r="40" stroke="#D4AF37" stroke-width="1"/>
+
+    <!-- Tangent Circles with Dots Frieze (Ring r=240) -->
+    <g stroke="#D4AF37" stroke-width="1" fill="none">
+      <circle cx="0" cy="-240" r="8"/><circle cx="0" cy="-240" r="1.5" fill="#D4AF37"/>
+      <circle cx="104" cy="-216" r="8"/><circle cx="104" cy="-216" r="1.5" fill="#D4AF37"/>
+      <circle cx="190" cy="-146" r="8"/><circle cx="190" cy="-146" r="1.5" fill="#D4AF37"/>
+      <circle cx="236" cy="-48" r="8"/><circle cx="236" cy="-48" r="1.5" fill="#D4AF37"/>
+      <circle cx="236" cy="48" r="8"/><circle cx="236" cy="48" r="1.5" fill="#D4AF37"/>
+      <circle cx="190" cy="146" r="8"/><circle cx="190" cy="146" r="1.5" fill="#D4AF37"/>
+      <circle cx="104" cy="216" r="8"/><circle cx="104" cy="216" r="1.5" fill="#D4AF37"/>
+      <circle cx="0" cy="240" r="8"/><circle cx="0" cy="240" r="1.5" fill="#D4AF37"/>
+      <circle cx="-104" cy="216" r="8"/><circle cx="-104" cy="216" r="1.5" fill="#D4AF37"/>
+      <circle cx="-190" cy="146" r="8"/><circle cx="-190" cy="146" r="1.5" fill="#D4AF37"/>
+      <circle cx="-236" cy="48" r="8"/><circle cx="-236" cy="48" r="1.5" fill="#D4AF37"/>
+      <circle cx="-236" cy="-48" r="8"/><circle cx="-236" cy="-48" r="1.5" fill="#D4AF37"/>
+      <circle cx="-190" cy="-146" r="8"/><circle cx="-190" cy="-146" r="1.5" fill="#D4AF37"/>
+      <circle cx="-104" cy="-216" r="8"/><circle cx="-104" cy="-216" r="1.5" fill="#D4AF37"/>
+    </g>
+
+    <!-- 14-Ray Sun Star at Drum Center -->
+    <g fill="#D4AF37">
+      <polygon points="0,-90 10,-35 0,-15 -10,-35"/>
+      <polygon points="0,90 10,35 0,15 -10,35"/>
+      <polygon points="-90,0 -35,10 -15,0 -35,-10"/>
+      <polygon points="90,0 35,10 15,0 35,-10"/>
+      <polygon points="-63.6,-63.6 -20,-30 -12,-12 -30,-20"/>
+      <polygon points="63.6,63.6 20,30 12,12 30,20"/>
+      <polygon points="-63.6,63.6 -30,20 -12,12 -20,30"/>
+      <polygon points="63.6,-63.6 30,-20 12,-12 20,-30"/>
+      <polygon points="-83.1,-34.5 -32,-8 -15,-3 -28,-19"/>
+      <polygon points="83.1,34.5 32,8 15,3 28,19"/>
+      <polygon points="-34.5,-83.1 -8,-32 -3,-15 -19,-28"/>
+      <polygon points="34.5,83.1 8,32 3,15 19,28"/>
+      <polygon points="-34.5,83.1 -8,32 -3,15 -19,28"/>
+      <polygon points="34.5,-83.1 8,-32 3,-15 19,-28"/>
+    </g>
+    <!-- Solar Center Core -->
+    <circle cx="0" cy="0" r="16" fill="#F1DE9B"/>
+    <circle cx="0" cy="0" r="8" fill="#0B0D10"/>
+  </g>
+
+  <!-- 3. Left Traditional Realm: Sinuous Lý Dynasty Dragon Line Art in Gold Inlay -->
+  <g id="ly-dragon" stroke="url(#bnr-gold)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Serpentine Multi-curve S-Body -->
+    <path d="M 120,440 
+             C 180,480 260,420 310,330 
+             C 360,240 440,180 540,210 
+             C 640,240 700,340 780,350 
+             C 860,360 930,280 990,220 
+             C 1050,160 1140,150 1220,190" 
+          stroke-width="3.5" opacity="0.95"/>
+    <!-- Parallel Inner Inlay Contour -->
+    <path d="M 130,432 
+             C 185,470 255,415 305,325 
+             C 355,235 435,175 535,205 
+             C 635,235 695,335 775,345 
+             C 855,355 925,275 985,215 
+             C 1045,155 1135,145 1215,185" 
+          stroke-width="1.2" stroke="#F1DE9B" opacity="0.75"/>
+    
+    <!-- Dragon Head & Flame Mane (Around x=220, y=410) -->
+    <!-- Head Contour -->
+    <path d="M 180,450 C 160,440 140,430 130,400 C 125,385 135,370 150,370 C 165,370 170,385 180,395 C 190,380 210,365 230,375 C 240,380 245,395 235,410 C 220,430 200,445 180,450 Z" 
+          stroke-width="2" fill="#0B0D10" fill-opacity="0.8"/>
+    <!-- Lotus Petal / Flame Crest on Dragon Head -->
+    <path d="M 155,370 C 145,340 160,310 175,290 C 180,315 185,340 175,365" stroke-width="1.8" stroke="#F1DE9B"/>
+    <path d="M 175,365 C 175,330 195,305 215,285 C 215,315 210,340 195,368" stroke-width="1.8" stroke="#D4AF37"/>
+    <path d="M 195,368 C 205,345 225,325 245,315 C 235,340 225,365 210,380" stroke-width="1.5" stroke="#F1DE9B"/>
+    <!-- Long Whiskers (Râu Rồng uốn lượn) -->
+    <path d="M 130,400 C 90,410 70,390 50,420 C 35,445 60,470 90,455" stroke-width="1.5" stroke="#F1DE9B" opacity="0.85"/>
+    <path d="M 140,415 C 110,435 90,430 75,465 C 65,490 95,505 120,480" stroke-width="1.2" stroke="#8C6B32" opacity="0.75"/>
+    <!-- Jewel / Pearl of Wisdom in Front of Dragon -->
+    <circle cx="45" cy="425" r="7" stroke="#F1DE9B" stroke-width="1.5" fill="#D4AF37" fill-opacity="0.3"/>
+    <circle cx="45" cy="425" r="2.5" fill="#36D7E8"/>
+
+    <!-- Dragon Flame Fins Along Body (Vây hình ngọn lửa) -->
+    <path d="M 330,300 C 320,265 335,245 350,235 C 348,255 352,275 365,285" stroke-width="1.5"/>
+    <path d="M 500,200 C 495,165 515,145 530,135 C 530,155 535,175 550,195" stroke-width="1.5"/>
+    <path d="M 720,310 C 725,275 745,255 765,245 C 758,270 760,290 770,320" stroke-width="1.5"/>
+    <path d="M 930,280 C 935,245 955,225 975,215 C 970,240 970,260 980,285" stroke-width="1.5"/>
+  </g>
+
+  <!-- 4. The Bridge: Dragon's Tail Dissolving into Golden Circuit Traces & Cyber Nodes -->
+  <g id="cyber-circuits" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main Transition Circuit Lines (From x=1220, y=190) -->
+    <path d="M 1220,190 L 1310,190 L 1370,130 L 1520,130 L 1560,170 L 1680,170" 
+          stroke="url(#bnr-gold)" stroke-width="2.5"/>
+    <circle cx="1310" cy="190" r="3.5" fill="#D4AF37"/>
+    <circle cx="1520" cy="130" r="3.5" fill="#F1DE9B"/>
+    <circle cx="1680" cy="170" r="4.5" fill="#36D7E8"/>
+
+    <path d="M 1200,210 L 1270,210 L 1330,270 L 1460,270 L 1500,310 L 1620,310" 
+          stroke="url(#bnr-cyan)" stroke-width="2"/>
+    <circle cx="1330" cy="270" r="3" fill="#00C896"/>
+    <circle cx="1500" cy="310" r="3" fill="#36D7E8"/>
+    <circle cx="1620" cy="310" r="4" fill="#00C896"/>
+
+    <path d="M 1150,240 L 1210,300 L 1360,300 L 1410,350 L 1550,350 L 1590,390 L 1710,390" 
+          stroke="#8C6B32" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="1210" cy="300" r="2.5" fill="#8C6B32"/>
+    <circle cx="1410" cy="350" r="2.5" fill="#D4AF37"/>
+    <circle cx="1710" cy="390" r="3.5" fill="#36D7E8"/>
+
+    <!-- Additional Diagonal Branching Circuit Traces -->
+    <path d="M 1370,130 L 1400,100 L 1580,100" stroke="#36D7E8" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="1580" cy="100" r="2" fill="#36D7E8"/>
+
+    <path d="M 1460,270 L 1490,240 L 1640,240" stroke="#00C896" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="1640" cy="240" r="2" fill="#00C896"/>
+
+    <path d="M 1550,350 L 1580,320 L 1690,320" stroke="#D4AF37" stroke-width="1" opacity="0.6"/>
+    <circle cx="1690" cy="320" r="2" fill="#F1DE9B"/>
+
+    <!-- Micro IC Chip / Logic Node on Right -->
+    <g transform="translate(1480, 190)">
+      <rect x="0" y="0" width="36" height="36" rx="3" fill="#12161B" stroke="#D4AF37" stroke-width="1.2"/>
+      <circle cx="18" cy="18" r="6" stroke="#36D7E8" stroke-width="1" fill="#0B0D10"/>
+      <circle cx="18" cy="18" r="2" fill="#00C896"/>
+      <!-- Chip Pins -->
+      <line x1="-5" y1="10" x2="0" y2="10" stroke="#8C6B32" stroke-width="1.2"/>
+      <line x1="-5" y1="18" x2="0" y2="18" stroke="#8C6B32" stroke-width="1.2"/>
+      <line x1="-5" y1="26" x2="0" y2="26" stroke="#8C6B32" stroke-width="1.2"/>
+      <line x1="36" y1="10" x2="41" y2="10" stroke="#8C6B32" stroke-width="1.2"/>
+      <line x1="36" y1="18" x2="41" y2="18" stroke="#8C6B32" stroke-width="1.2"/>
+      <line x1="36" y1="26" x2="41" y2="26" stroke="#8C6B32" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- 5. Stylized Chim Lạc (Dong Son Crane) Soaring from Middle to Right -->
+  <g id="chim-lac" transform="translate(1120, 90) scale(0.7)" opacity="0.65" stroke="#D4AF37" stroke-width="1.8" fill="none">
+    <!-- Long beak, slender neck, wide outstretched wings, long tail feathers -->
+    <path d="M 100,50 C 70,45 20,40 0,55 C 40,35 90,30 140,40 C 180,48 220,70 260,110"/>
+    <path d="M 140,40 C 160,15 200,-15 250,-25 C 235,15 220,50 200,75"/>
+    <path d="M 180,65 C 220,60 270,70 310,95 C 275,100 240,105 205,95"/>
+    <circle cx="15" cy="48" r="1.5" fill="#36D7E8"/>
+  </g>
+
+  <!-- 6. Faint Floating Vietnamese Diacritic Glyphs (Dấu thanh: Sắc, Huyền, Hỏi, Ngã, Nặng) -->
+  <g id="diacritic-rain" opacity="0.25" fill="#D4AF37">
+    <!-- Sắc (Acute) -->
+    <polygon points="1260,110 1270,95 1273,97 1262,112"/>
+    <polygon points="1630,200 1640,185 1643,187 1632,202" fill="#36D7E8"/>
+    <!-- Huyền (Grave) -->
+    <polygon points="1350,220 1340,205 1337,207 1348,222"/>
+    <polygon points="1520,380 1510,365 1507,367 1518,382" fill="#00C896"/>
+    <!-- Hỏi (Hook above) -->
+    <path d="M 1440,80 C 1440,73 1446,70 1450,73 C 1454,76 1450,82 1448,85 L 1448,90" stroke="#D4AF37" stroke-width="1.8" fill="none"/>
+    <path d="M 1660,130 C 1660,123 1666,120 1670,123 C 1674,126 1670,132 1668,135 L 1668,140" stroke="#36D7E8" stroke-width="1.8" fill="none"/>
+    <!-- Ngã (Tilde) -->
+    <path d="M 1290,320 C 1293,315 1298,315 1302,320 C 1306,325 1311,325 1314,320" stroke="#F1DE9B" stroke-width="1.8" fill="none"/>
+    <!-- Nặng (Dot below) -->
+    <circle cx="1380" cy="160" r="2.5" fill="#00C896"/>
+    <circle cx="1600" cy="270" r="2.5" fill="#36D7E8"/>
+  </g>
+
+  <!-- 7. Data Particles (Cyan & Jade Nodes floating) -->
+  <g id="data-particles">
+    <circle cx="1250" cy="150" r="1.5" fill="#36D7E8" opacity="0.6"/>
+    <circle cx="1320" cy="330" r="2" fill="#00C896" opacity="0.5"/>
+    <circle cx="1440" cy="120" r="2.5" fill="#36D7E8" opacity="0.7"/>
+    <circle cx="1570" cy="260" r="1.5" fill="#00C896" opacity="0.6"/>
+    <circle cx="1660" cy="210" r="2.5" fill="#36D7E8" opacity="0.8"/>
+    <circle cx="1720" cy="150" r="2" fill="#F1DE9B" opacity="0.6"/>
+  </g>
+
+  <!-- 8. Bottom 25% Seamless Fade into pure #0B0D10 (y=480 to 640) -->
+  <rect x="0" y="460" width="1760" height="180" fill="url(#bnr-bottom-fade)"/>
+</svg>

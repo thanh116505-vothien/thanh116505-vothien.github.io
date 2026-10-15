@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 220" width="880" height="220" fill="none">
+  <title>VÔ THIÊN - Wordmark Plate</title>
+  <desc>Official brand wordmark for VoThien - From Bronze to Code</desc>
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="wm-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B0D10" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#07090C" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Imperial Gold Gradient -->
+    <linearGradient id="wm-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1DE9B"/>
+      <stop offset="45%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8C6B32"/>
+    </linearGradient>
+
+    <!-- Subtle Bronze Gradient -->
+    <linearGradient id="wm-bronze" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C6B32" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#8C6B32" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Plate -->
+  <rect width="880" height="220" fill="url(#wm-bg)"/>
+
+  <!-- Border & Corner Ornaments (Dong Son Sawtooth & Lotus corners) -->
+  <rect x="24" y="16" width="832" height="188" rx="2" stroke="#1B2129" stroke-width="1.2"/>
+  <rect x="28" y="20" width="824" height="180" rx="1" stroke="#8C6B32" stroke-width="0.8" stroke-dasharray="8, 4" opacity="0.4"/>
+
+  <!-- Top-Left Corner Bracket -->
+  <path d="M22,34 L22,22 L34,22" stroke="#D4AF37" stroke-width="1.8" fill="none"/>
+  <circle cx="22" cy="22" r="1.5" fill="#36D7E8"/>
+  <!-- Top-Right Corner Bracket -->
+  <path d="M858,34 L858,22 L846,22" stroke="#D4AF37" stroke-width="1.8" fill="none"/>
+  <circle cx="858" cy="22" r="1.5" fill="#36D7E8"/>
+  <!-- Bottom-Left Corner Bracket -->
+  <path d="M22,186 L22,198 L34,198" stroke="#D4AF37" stroke-width="1.8" fill="none"/>
+  <circle cx="22" cy="198" r="1.5" fill="#00C896"/>
+  <!-- Bottom-Right Corner Bracket -->
+  <path d="M858,186 L858,198 L846,198" stroke="#D4AF37" stroke-width="1.8" fill="none"/>
+  <circle cx="858" cy="198" r="1.5" fill="#00C896"/>
+
+  <!-- Top Line with Center Diamond -->
+  <line x1="220" y1="36" x2="660" y2="36" stroke="url(#wm-bronze)" stroke-width="1"/>
+  <polygon points="440,33 444,36 440,39 436,36" fill="#D4AF37"/>
+  <circle cx="440" cy="36" r="1" fill="#36D7E8"/>
+
+  <!-- Left & Right Mini Sun Medallions -->
+  <g transform="translate(190, 92)">
+    <circle cx="0" cy="0" r="14" stroke="#8C6B32" stroke-width="0.8" opacity="0.6"/>
+    <circle cx="0" cy="0" r="11" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="2, 2"/>
+    <polygon points="0,-8 1,-3 0,-1 -1,-3" fill="#D4AF37"/>
+    <polygon points="0,8 1,3 0,1 -1,3" fill="#D4AF37"/>
+    <polygon points="-8,0 -3,1 -1,0 -3,-1" fill="#D4AF37"/>
+    <polygon points="8,0 3,1 1,0 3,-1" fill="#D4AF37"/>
+    <circle cx="0" cy="0" r="2" fill="#F1DE9B"/>
+    <!-- Circuit tail -->
+    <path d="M-15,0 L-45,0 L-55,-10" stroke="#8C6B32" stroke-width="1" fill="none" opacity="0.5"/>
+    <circle cx="-55" cy="-10" r="1.5" fill="#36D7E8"/>
+  </g>
+
+  <g transform="translate(690, 92)">
+    <circle cx="0" cy="0" r="14" stroke="#8C6B32" stroke-width="0.8" opacity="0.6"/>
+    <circle cx="0" cy="0" r="11" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="2, 2"/>
+    <polygon points="0,-8 1,-3 0,-1 -1,-3" fill="#D4AF37"/>
+    <polygon points="0,8 1,3 0,1 -1,3" fill="#D4AF37"/>
+    <polygon points="-8,0 -3,1 -1,0 -3,-1" fill="#D4AF37"/>
+    <polygon points="8,0 3,1 1,0 3,-1" fill="#D4AF37"/>
+    <circle cx="0" cy="0" r="2" fill="#F1DE9B"/>
+    <!-- Circuit tail -->
+    <path d="M15,0 L45,0 L55,10" stroke="#8C6B32" stroke-width="1" fill="none" opacity="0.5"/>
+    <circle cx="55" cy="10" r="1.5" fill="#00C896"/>
+  </g>
+
+  <!-- Central Display Title: VÔ THIÊN -->
+  <!-- Rendered with high-contrast serif font and crisp vector diacritics for flawless display -->
+  <g id="brand-title">
+    <text x="440" y="105" text-anchor="middle" font-family="Georgia, 'Times New Roman', 'Playfair Display', serif" font-size="52" font-weight="700" letter-spacing="10" fill="url(#wm-gold)">
+      VÔ THIÊN
+    </text>
+  </g>
+
+  <!-- Subtitle 1: Monospaced Tracked Romanization -->
+  <text x="440" y="138" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="500" letter-spacing="14" fill="#B9B2A3">
+    V O T H I E N
+  </text>
+
+  <!-- Bottom Divider Line with Sun Motif -->
+  <line x1="260" y1="154" x2="620" y2="154" stroke="url(#wm-bronze)" stroke-width="1"/>
+  <polygon points="440,151 443,154 440,157 437,154" fill="#D4AF37"/>
+
+  <!-- Subtitle 2: Core Engineering Domains -->
+  <text x="440" y="180" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="2" fill="#EAE4D8">
+    Game Localization <tspan fill="#8C6B32">·</tspan> Reverse Engineering <tspan fill="#8C6B32">·</tspan> AI <tspan fill="#8C6B32">·</tspan> Security
+  </text>
+</svg>

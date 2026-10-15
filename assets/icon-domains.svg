@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Domains Icon</title>
+  <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+  <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+  <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+  <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+  <path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4" stroke="#8C6B32" stroke-width="1.2"/>
+</svg>

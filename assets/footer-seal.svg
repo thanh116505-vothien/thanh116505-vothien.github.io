@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 120" width="880" height="120" fill="none">
+  <title>Vô Thiên Footer Seal</title>
+  <defs>
+    <linearGradient id="ft-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C6B32" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#D4AF37" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F1DE9B" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#8C6B32" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Plate -->
+  <rect width="880" height="120" fill="#0B0D10"/>
+
+  <!-- Top Divider Line -->
+  <line x1="80" y1="20" x2="800" y2="20" stroke="url(#ft-gold)" stroke-width="1.2"/>
+
+  <!-- Left Circuit Accent -->
+  <path d="M 80,20 L 60,40 L 20,40" stroke="#8C6B32" stroke-width="1"/>
+  <circle cx="20" cy="40" r="2" fill="#36D7E8"/>
+
+  <!-- Right Circuit Accent -->
+  <path d="M 800,20 L 820,40 L 860,40" stroke="#8C6B32" stroke-width="1"/>
+  <circle cx="860" cy="40" r="2" fill="#00C896"/>
+
+  <!-- Cinnabar Red Imperial Seal (Ấn Son Vô Thiên, ≤ 1% diện tích) -->
+  <g transform="translate(422, 38)">
+    <rect x="0" y="0" width="36" height="36" rx="4" fill="#A63A2B" stroke="#D4AF37" stroke-width="1.2"/>
+    <rect x="3" y="3" width="30" height="30" rx="2" stroke="#F1DE9B" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <!-- Stylized Monogram VT inside Seal -->
+    <text x="18" y="24" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#F1DE9B" letter-spacing="1">
+      VT
+    </text>
+  </g>
+
+  <!-- Tagline Text -->
+  <text x="440" y="94" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="600" fill="#D4AF37" letter-spacing="4">
+    TỪ ĐỒNG ĐẾN MÃ · FROM BRONZE TO CODE
+  </text>
+  <text x="440" y="108" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, monospace" font-size="9" fill="#B9B2A3" letter-spacing="2">
+    PRESERVING HERITAGE · ARCHITECTING INTELLIGENCE
+  </text>
+</svg>
