@@ -2,55 +2,60 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ôn Thi Java VMU - IntelliJ IDEA Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Ôn Thi Java VMU - Sơ Đồ Tư Duy & Slide Bài Giảng</title>
   <style>
     :root {
-      --bg-main: #1e1f22;
-      --bg-sidebar: #2b2d30;
-      --bg-card: #25272a;
-      --bg-code: #16171a;
-      --border: #3e4147;
+      --bg-main: #18191c;
+      --bg-sidebar: #222428;
+      --bg-card: #272a2f;
+      --bg-card-hover: #30343a;
+      --bg-code: #121316;
+      --border: #383c44;
       --border-focus: #3574f0;
       --text-main: #e6e8ec;
-      --text-muted: #a4a8b2;
+      --text-muted: #9ba1ad;
       --accent: #3574f0;
-      --accent-hover: #4682f4;
+      --accent-hover: #4a84f5;
+      --accent-glow: rgba(53, 116, 240, 0.25);
       --green: #499c54;
+      --green-glow: rgba(73, 156, 84, 0.2);
       --yellow: #f5a623;
+      --yellow-glow: rgba(245, 166, 35, 0.2);
       --orange: #e57832;
       --red: #e06c75;
+      --purple: #b162f1;
       --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-code: "JetBrains Mono", Consolas, "Courier New", monospace;
 
-      /* Cỡ chữ to mặc định */
-      --fs-base: 15px;
-      --fs-code: 14.5px;
-      --fs-h1: 24px;
-      --fs-h2: 20px;
-      --fs-h3: 16.5px;
+      --fs-base: 14.5px;
+      --fs-code: 13.5px;
+      --fs-h1: 22px;
+      --fs-h2: 18px;
+      --fs-h3: 15.5px;
     }
 
     body.font-large {
-      --fs-base: 16.5px;
-      --fs-code: 16px;
-      --fs-h1: 27px;
-      --fs-h2: 22px;
-      --fs-h3: 18px;
+      --fs-base: 16px;
+      --fs-code: 15px;
+      --fs-h1: 25px;
+      --fs-h2: 21px;
+      --fs-h3: 17.5px;
     }
 
     body.font-xlarge {
-      --fs-base: 18.5px;
-      --fs-code: 18px;
-      --fs-h1: 30px;
-      --fs-h2: 25px;
-      --fs-h3: 20px;
+      --fs-base: 18px;
+      --fs-code: 17px;
+      --fs-h1: 28px;
+      --fs-h2: 24px;
+      --fs-h3: 19.5px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -61,136 +66,167 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
+      height: 100dvh;
       overflow: hidden;
       line-height: 1.5;
     }
 
-    /* Top Navigation Bar */
+    /* HEADER */
     header {
       background: var(--bg-sidebar);
       border-bottom: 1px solid var(--border);
-      padding: 10px 24px;
+      padding: 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-shrink: 0;
-      gap: 16px;
+      gap: 12px;
+      z-index: 50;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
     }
 
     .logo-badge {
       background: linear-gradient(135deg, #087CFA, #E51400);
       color: #fff;
       font-weight: 800;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 6px;
-      font-size: 15px;
+      font-size: 14px;
       font-family: var(--font-code);
       letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(8, 124, 250, 0.4);
     }
 
     .brand-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: #ffffff;
+      white-space: nowrap;
     }
 
     .brand-subtitle {
-      font-size: 13px;
+      font-size: 11.5px;
       color: var(--text-muted);
+    }
+
+    /* TABS */
+    .tabs-scroll-area {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .tabs-scroll-area::-webkit-scrollbar {
+      display: none;
     }
 
     .tabs {
       display: flex;
-      gap: 8px;
+      gap: 6px;
+      background: rgba(0,0,0,0.25);
+      padding: 4px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      width: max-content;
     }
 
     .tab-btn {
       background: transparent;
-      border: 1px solid transparent;
+      border: none;
       color: var(--text-muted);
-      padding: 8px 18px;
-      border-radius: 6px;
+      padding: 6px 14px;
+      border-radius: 18px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
-      transition: all 0.15s ease;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      white-space: nowrap;
     }
 
     .tab-btn:hover {
-      background: #393b40;
-      color: var(--text-main);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .tab-btn.active {
-      background: #3574f0;
+      background: var(--accent);
       color: #fff;
-      font-weight: 600;
+      box-shadow: 0 2px 10px var(--accent-glow);
     }
 
-    /* Controls: Font size & Progress */
+    .tab-btn.highlight {
+      color: #ffd043;
+    }
+
+    .tab-btn.highlight.active {
+      background: linear-gradient(135deg, #f5a623, #d97706);
+      color: #fff;
+      box-shadow: 0 2px 10px var(--yellow-glow);
+    }
+
+    /* HEADER RIGHT */
     .header-right {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
+      flex-shrink: 0;
     }
 
     .font-controls {
       display: flex;
       align-items: center;
-      gap: 5px;
-      background: #1e1f22;
-      padding: 4px 8px;
-      border-radius: 8px;
+      gap: 4px;
+      background: rgba(0,0,0,0.3);
+      padding: 3px 6px;
+      border-radius: 6px;
       border: 1px solid var(--border);
     }
 
     .font-btn {
       background: transparent;
-      border: 1px solid transparent;
+      border: none;
       color: var(--text-muted);
-      padding: 4px 10px;
-      border-radius: 5px;
-      font-size: 13px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-size: 12px;
       cursor: pointer;
       font-weight: 600;
-      transition: all 0.15s;
-    }
-
-    .font-btn:hover {
-      color: #fff;
-      background: #33363b;
     }
 
     .font-btn.active {
-      background: #3574f0;
+      background: var(--accent);
       color: #fff;
     }
 
     .progress-box {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #1e1f22;
-      padding: 6px 14px;
-      border-radius: 20px;
+      gap: 8px;
+      background: rgba(0,0,0,0.3);
+      padding: 5px 10px;
+      border-radius: 16px;
       border: 1px solid var(--border);
-      font-size: 13px;
+      font-size: 12px;
+      white-space: nowrap;
     }
 
     .progress-bar {
-      width: 90px;
-      height: 9px;
-      background: #393b40;
-      border-radius: 5px;
+      width: 60px;
+      height: 7px;
+      background: #383c44;
+      border-radius: 4px;
       overflow: hidden;
     }
 
@@ -201,17 +237,18 @@
       transition: width 0.3s;
     }
 
-    /* Main Container */
+    /* MAIN APP BODY */
     .app-body {
       display: flex;
       flex: 1;
       overflow: hidden;
+      position: relative;
     }
 
-    /* TAB CONTENTS */
     .tab-pane {
       display: none;
       flex: 1;
+      height: 100%;
       overflow: hidden;
     }
 
@@ -219,18 +256,282 @@
       display: flex !important;
     }
 
-    /* ========================================================== */
-    /* TAB 1: OVERVIEW & GENERAL CHEAT SHEET */
-    /* ========================================================== */
+    /* ======================================================= */
+    /* TAB 0: MINDMAP & PRESENTATION SLIDES                    */
+    /* ======================================================= */
+    .slides-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #141518;
+      overflow: hidden;
+    }
+
+    .slide-toolbar {
+      background: var(--bg-sidebar);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .slide-mode-switch {
+      display: flex;
+      gap: 6px;
+      background: #18191c;
+      padding: 3px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .mode-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mode-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .slide-nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .slide-counter {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      background: rgba(255,255,255,0.06);
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .slide-viewport {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      scroll-behavior: smooth;
+    }
+
+    .slide-card {
+      width: 100%;
+      max-width: 1050px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      animation: fadeInSlide 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(12px) scale(0.99); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .slide-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .slide-title-group h2 {
+      font-size: var(--fs-h1);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.35;
+    }
+
+    .slide-title-group p {
+      color: var(--text-muted);
+      font-size: var(--fs-base);
+      margin-top: 6px;
+    }
+
+    .slide-badge {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-code);
+      background: #3574f022;
+      color: #61afef;
+      border: 1px solid #3574f055;
+      white-space: nowrap;
+    }
+
+    /* MINDMAP VISUAL NODE GRAPH */
+    .mindmap-graph {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 4px 0;
+    }
+
+    .mm-node {
+      background: #1c1e22;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mm-node::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--node-color, var(--accent));
+    }
+
+    .mm-node:hover {
+      border-color: var(--node-color, var(--accent));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .mm-node-title {
+      font-size: calc(var(--fs-base) * 1.05);
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mm-node-branches {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: calc(var(--fs-base) * 0.93);
+      color: #cbd0dc;
+    }
+
+    .mm-node-branches li {
+      position: relative;
+      padding-left: 14px;
+      line-height: 1.45;
+    }
+
+    .mm-node-branches li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--node-color, var(--accent));
+    }
+
+    .mm-node-branches code {
+      background: #282a30;
+      color: #61afef;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: var(--font-code);
+      font-size: 0.9em;
+    }
+
+    /* CALLOUT BOXES */
+    .callout-box {
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: var(--fs-base);
+      line-height: 1.55;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .callout-trap {
+      background: #2b2316;
+      border: 1px solid #7a5416;
+      border-left: 4px solid var(--yellow);
+      color: #f7ba55;
+    }
+
+    .callout-tip {
+      background: #17243b;
+      border: 1px solid #234e8c;
+      border-left: 4px solid var(--accent);
+      color: #9ac2fc;
+    }
+
+    .callout-code {
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .callout-code pre {
+      padding: 14px 16px;
+      font-family: var(--font-code);
+      font-size: var(--fs-code);
+      color: #abb2bf;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.55;
+    }
+
+    /* FULL MINDMAP SVG TREE VIEW */
+    .full-tree-view {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .full-tree-view.active {
+      display: flex;
+    }
+
+    /* OVERVIEW / CHEAT SHEET */
     .overview-container {
       flex: 1;
       overflow-y: auto;
-      padding: 24px 36px;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
-      gap: 24px;
-      max-width: 1650px;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+      max-width: 1550px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .overview-hero {
@@ -238,40 +539,21 @@
       background: linear-gradient(135deg, #1e2638, #18261e);
       border: 1px solid #3574f055;
       border-radius: 12px;
-      padding: 22px 28px;
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    }
-
-    .overview-hero h2 {
-      font-size: var(--fs-h1);
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .overview-hero p {
-      color: #c0c4ce;
-      font-size: calc(var(--fs-base) * 0.98);
-      line-height: 1.6;
+      gap: 16px;
     }
 
     .overview-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 20px 22px;
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      transition: transform 0.2s, border-color 0.2s;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .overview-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
+      gap: 12px;
     }
 
     .card-head {
@@ -289,21 +571,11 @@
       gap: 8px;
     }
 
-    .card-badge {
-      font-size: 12.5px;
-      padding: 4px 10px;
-      border-radius: 5px;
-      background: #32353a;
-      color: #bcc0cb;
-      font-family: var(--font-code);
-      font-weight: 600;
-    }
-
     .skeleton-box {
       background: var(--bg-code);
       border: 1px solid #2e3036;
       border-radius: 8px;
-      padding: 14px 16px;
+      padding: 12px 14px;
       font-family: var(--font-code);
       font-size: var(--fs-code);
       color: #abb2bf;
@@ -332,33 +604,25 @@
       line-height: 1.45;
     }
 
-    .trap-list code {
-      background: #3d321d;
-      color: #ffd580;
-      padding: 1px 5px;
-      border-radius: 4px;
-      font-family: var(--font-code);
-      font-weight: 600;
-    }
-
-    /* ========================================================== */
-    /* TAB 2: DEEP DIVE (35 CURATED PROBLEMS) */
-    /* ========================================================== */
+    /* ======================================================= */
+    /* TAB 2: DEEP DIVE (35 CURATED PROBLEMS)                  */
+    /* ======================================================= */
     .sidebar {
-      width: 410px;
+      width: 380px;
       background: var(--bg-sidebar);
       border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       flex-shrink: 0;
+      height: 100%;
     }
 
     .sidebar-search {
-      padding: 16px;
+      padding: 14px;
       border-bottom: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .search-input {
@@ -366,7 +630,7 @@
       background: var(--bg-main);
       border: 1px solid var(--border);
       color: var(--text-main);
-      padding: 10px 14px;
+      padding: 8px 12px;
       border-radius: 6px;
       font-size: var(--fs-base);
       outline: none;
@@ -386,16 +650,15 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 6px 10px;
-      border-radius: 5px;
-      font-size: 13px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.15s;
     }
 
-    .filter-btn:hover, .filter-btn.active {
-      background: #393b40;
+    .filter-btn.active {
+      background: var(--accent);
       color: #fff;
       border-color: var(--accent);
     }
@@ -403,29 +666,30 @@
     .problem-list {
       flex: 1;
       overflow-y: auto;
-      padding: 10px;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
 
     .problem-item {
-      padding: 12px 14px;
-      border-radius: 8px;
+      padding: 10px 12px;
+      border-radius: 6px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
       border: 1px solid transparent;
       transition: all 0.15s;
     }
 
     .problem-item:hover {
-      background: #32353a;
+      background: #2e3137;
     }
 
     .problem-item.active {
-      background: #2e3c54;
+      background: #2a3852;
       border-color: #3574f0;
     }
 
@@ -433,23 +697,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
     }
 
     .item-title {
-      font-size: calc(var(--fs-base) * 0.98);
+      font-size: var(--fs-base);
       font-weight: 700;
       color: #fff;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 270px;
     }
 
     .item-badge {
       font-size: 11px;
-      padding: 3px 7px;
+      padding: 2px 6px;
       border-radius: 4px;
       font-weight: 700;
+      flex-shrink: 0;
     }
 
     .badge-core { background: #264f36; color: #62c453; }
@@ -465,15 +730,39 @@
       text-overflow: ellipsis;
     }
 
-    /* Detail View */
+    /* DETAIL VIEW */
     .detail-view {
       flex: 1;
       overflow-y: auto;
-      padding: 28px 40px;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 32px;
       display: flex;
       flex-direction: column;
-      gap: 22px;
-      max-width: 1250px;
+      gap: 20px;
+      max-width: 1200px;
+    }
+
+    .mobile-detail-nav {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .btn-back-list {
+      background: #2a3140;
+      color: #fff;
+      border: 1px solid #3574f0;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
     }
 
     .detail-header {
@@ -481,40 +770,29 @@
       justify-content: space-between;
       align-items: flex-start;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 18px;
-      gap: 20px;
+      padding-bottom: 16px;
+      gap: 16px;
     }
 
     .detail-title-group h1 {
       font-size: var(--fs-h1);
       color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      line-height: 1.35;
     }
 
     .detail-meta {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       margin-top: 8px;
       font-size: var(--fs-base);
       color: var(--text-muted);
-      align-items: center;
-    }
-
-    .detail-meta code {
-      background: #32353a;
-      color: #61afef;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: var(--font-code);
-      font-size: var(--fs-code);
+      flex-wrap: wrap;
     }
 
     .actions-group {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
     }
 
@@ -522,15 +800,16 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       color: var(--text-main);
-      padding: 10px 16px;
+      padding: 8px 14px;
       border-radius: 6px;
       cursor: pointer;
       font-size: var(--fs-base);
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.15s;
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -539,13 +818,9 @@
     }
 
     .btn-primary {
-      background: #3574f0;
+      background: var(--accent);
       color: #fff;
       border-color: transparent;
-    }
-
-    .btn-primary:hover {
-      background: #2563eb;
     }
 
     .btn-memorized {
@@ -559,62 +834,37 @@
       color: #fff;
     }
 
-    /* Memory Mode Toggle Bar */
     .memory-toggle-bar {
       background: #2b2518;
       border: 1px solid #73531b;
-      padding: 12px 18px;
+      padding: 10px 14px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
       font-size: var(--fs-base);
     }
 
-    .memory-desc {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #f7b955;
-      line-height: 1.45;
-    }
-
-    /* Info Blocks */
     .info-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 18px 22px;
-    }
-
-    .info-card h3 {
-      font-size: var(--fs-h3);
-      color: #fff;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .info-card p {
-      font-size: var(--fs-base);
-      line-height: 1.6;
-      color: #d2d6df;
+      padding: 16px 18px;
     }
 
     .io-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
+      gap: 12px;
+      margin-top: 12px;
     }
 
     .io-box {
       background: var(--bg-code);
       border: 1px solid #32353a;
       border-radius: 6px;
-      padding: 12px 14px;
+      padding: 10px 12px;
       font-family: var(--font-code);
       font-size: var(--fs-code);
       white-space: pre-wrap;
@@ -626,27 +876,6 @@
       color: #61afef;
     }
 
-    .trap-box {
-      border-left: 4px solid var(--yellow);
-      background: #2b261b;
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      font-size: var(--fs-base);
-      color: #f7ba55;
-      line-height: 1.6;
-    }
-
-    .tip-box {
-      border-left: 4px solid var(--accent);
-      background: #1c2538;
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      font-size: var(--fs-base);
-      color: #93b9fa;
-      line-height: 1.6;
-    }
-
-    /* Code Container */
     .code-container {
       background: var(--bg-code);
       border: 1px solid var(--border);
@@ -654,47 +883,39 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     .code-header {
-      background: #212226;
+      background: #1e2024;
       border-bottom: 1px solid #2e3035;
-      padding: 10px 18px;
+      padding: 8px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 13.5px;
+      font-size: 13px;
       font-family: var(--font-code);
-      font-weight: 600;
       color: var(--text-muted);
     }
 
     pre.code-block {
-      padding: 20px 24px;
+      padding: 16px 18px;
       font-family: var(--font-code);
       font-size: var(--fs-code);
-      line-height: 1.65;
+      line-height: 1.6;
       color: #abb2bf;
       overflow-x: auto;
       white-space: pre;
     }
 
-    /* Memory Mode Blur */
     .blur-line {
-      filter: blur(6px);
+      filter: blur(5px);
       background: #2c313a;
       color: transparent;
       user-select: none;
       cursor: pointer;
       border-radius: 4px;
-      padding: 0 6px;
-      transition: filter 0.2s, background 0.2s;
-      display: inline-block;
-    }
-
-    .blur-line:hover {
-      filter: blur(3px);
+      padding: 0 4px;
+      transition: filter 0.2s;
     }
 
     .blur-line.revealed {
@@ -704,22 +925,30 @@
       user-select: text !important;
     }
 
-    /* ========================================================== */
-    /* TAB 3: FLASHCARDS (REFLEX MEMORY) */
-    /* ========================================================== */
+    .problem-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* FLASHCARDS */
     .flashcard-container {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 30px;
-      gap: 28px;
+      padding: 24px;
+      gap: 20px;
     }
 
     .card-scene {
-      width: 720px;
-      height: 400px;
+      width: 100%;
+      max-width: 680px;
+      height: 380px;
       perspective: 1200px;
     }
 
@@ -728,9 +957,9 @@
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: pointer;
-      border-radius: 16px;
+      border-radius: 14px;
     }
 
     .flashcard.flipped {
@@ -742,8 +971,8 @@
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border-radius: 16px;
-      padding: 36px 40px;
+      border-radius: 14px;
+      padding: 28px 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -752,12 +981,12 @@
     }
 
     .card-front {
-      background: linear-gradient(145deg, #272a31, #1d2025);
+      background: linear-gradient(145deg, #25282f, #1b1d22);
       color: #fff;
     }
 
     .card-back {
-      background: linear-gradient(145deg, #1c2538, #161c29);
+      background: linear-gradient(145deg, #192132, #141822);
       color: #abb2bf;
       transform: rotateY(180deg);
       border-color: #3574f0;
@@ -766,30 +995,193 @@
     .flashcard-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
     }
 
-    /* Toast Notification */
+    /* TOAST */
     #toast {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
       background: #3574f0;
       color: #fff;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-size: 14.5px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 13.5px;
       font-weight: 600;
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
       opacity: 0;
-      transform: translateY(20px);
       transition: all 0.25s ease;
       z-index: 9999;
+      pointer-events: none;
+      white-space: nowrap;
     }
 
     #toast.show {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ======================================================= */
+    /* MOBILE OPTIMIZATIONS (< 900px)                          */
+    /* ======================================================= */
+    @media (max-width: 900px) {
+      header {
+        flex-wrap: wrap;
+        padding: 8px 12px;
+        gap: 8px;
+      }
+
+      .brand {
+        order: 1;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .header-right {
+        order: 2;
+        margin-left: auto;
+        gap: 6px;
+      }
+
+      .font-label {
+        display: none;
+      }
+
+      .progress-box {
+        padding: 3px 8px;
+        font-size: 11.5px;
+      }
+
+      .progress-bar {
+        width: 45px;
+      }
+
+      .tabs-scroll-area {
+        order: 3;
+        width: 100%;
+        margin: 2px -12px -4px -12px;
+        padding: 2px 12px 6px 12px;
+      }
+
+      .tab-btn {
+        padding: 5px 11px;
+        font-size: 12.5px;
+      }
+
+      /* Slide responsive */
+      .slide-viewport {
+        padding: 12px;
+      }
+
+      .slide-card {
+        padding: 18px 14px;
+        gap: 16px;
+      }
+
+      .slide-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .slide-title-group h2 {
+        font-size: 18px;
+      }
+
+      .mindmap-graph {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      /* Deep Dive Master-Detail */
+      #pane-deepdive .sidebar {
+        width: 100%;
+        border-right: none;
+        display: flex;
+      }
+
+      #pane-deepdive .detail-view {
+        display: none;
+        padding: 14px 12px 60px 12px;
+        width: 100%;
+      }
+
+      #pane-deepdive.mobile-show-detail .sidebar {
+        display: none !important;
+      }
+
+      #pane-deepdive.mobile-show-detail .detail-view {
+        display: flex !important;
+      }
+
+      .mobile-detail-nav {
+        display: flex;
+      }
+
+      .detail-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .actions-group {
+        width: 100%;
+      }
+
+      .actions-group .btn {
+        flex: 1;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+
+      .io-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-toggle-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      /* Overview grid */
+      .overview-container {
+        padding: 12px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .overview-hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+      }
+
+      /* Flashcard */
+      .flashcard-container {
+        padding: 14px 10px;
+      }
+
+      .card-scene {
+        height: 390px;
+      }
+
+      .card-face {
+        padding: 18px 16px;
+      }
+
+      #fc-question {
+        font-size: 17px !important;
+      }
     }
   </style>
 </head>
@@ -800,33 +1192,39 @@
     <div class="brand">
       <div class="logo-badge">IJ VMU</div>
       <div>
-        <div class="brand-title">Ôn Tập Java Thực Hành - VMU</div>
-        <div class="brand-subtitle">IntelliJ Edition • 2 Tầng Ôn Tập</div>
+        <div class="brand-title">Ôn Thi Java - VMU</div>
+        <div class="brand-subtitle">IntelliJ Edition • Sơ Đồ Tư Duy & 35 Bài</div>
       </div>
     </div>
 
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('overview')">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z"/></svg>
-        1. Ôn Tổng Quát (Sườn Bài)
-      </button>
-      <button class="tab-btn" onclick="switchTab('deepdive')">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
-        2. Ôn Chuyên Sâu (35 Bài)
-      </button>
-      <button class="tab-btn" onclick="switchTab('flashcards')">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>
-        3. Flashcards Phản Xạ
-      </button>
-      <button class="tab-btn" onclick="switchTab('intellij')">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5zm-7-2a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z"/></svg>
-        4. Phím Tắt IntelliJ
-      </button>
+    <div class="tabs-scroll-area">
+      <div class="tabs">
+        <button class="tab-btn highlight active" onclick="switchTab('slides')">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/><path d="M4 4h8v2H4V4zm0 3h5v2H4V7z"/></svg>
+          Sơ Đồ & Slide
+        </button>
+        <button class="tab-btn" onclick="switchTab('overview')">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z"/></svg>
+          Sườn Cốt Lõi
+        </button>
+        <button class="tab-btn" onclick="switchTab('deepdive')">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+          35 Bài Tập
+        </button>
+        <button class="tab-btn" onclick="switchTab('flashcards')">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>
+          Flashcards
+        </button>
+        <button class="tab-btn" onclick="switchTab('intellij')">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5zm-7-2a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z"/></svg>
+          Phím Tắt
+        </button>
+      </div>
     </div>
 
     <div class="header-right">
       <div class="font-controls">
-        <span style="font-size: 13px; color: var(--text-muted); font-weight:600;">Cỡ chữ:</span>
+        <span class="font-label" style="font-size: 12px; color: var(--text-muted); font-weight:600;">Chữ:</span>
         <button class="font-btn" onclick="setFontSize('normal')" id="btn-font-normal">Vừa</button>
         <button class="font-btn active" onclick="setFontSize('large')" id="btn-font-large">To</button>
         <button class="font-btn" onclick="setFontSize('xlarge')" id="btn-font-xlarge">Rất to</button>
@@ -844,21 +1242,57 @@
   <!-- BODY CONTENT -->
   <div class="app-body">
 
-    <!-- TAB 1: OVERVIEW -->
-    <div id="pane-overview" class="tab-pane active">
+    <!-- ========================================================= -->
+    <!-- TAB 0: MINDMAP & PRESENTATION SLIDES                     -->
+    <!-- ========================================================= -->
+    <div id="pane-slides" class="tab-pane active">
+      <div class="slides-wrapper">
+        <div class="slide-toolbar">
+          <div class="slide-mode-switch">
+            <button class="mode-btn active" id="btn-mode-slide" onclick="setSlideMode('deck')">
+              🖥️ Slide Bài Giảng
+            </button>
+            <button class="mode-btn" id="btn-mode-tree" onclick="setSlideMode('tree')">
+              🌿 Cây Sơ Đồ Toàn Thể
+            </button>
+          </div>
+
+          <div class="slide-nav-controls" id="slide-nav-controls">
+            <button class="btn" style="padding: 4px 10px;" onclick="prevSlide()" title="Phím mũi tên trái">&larr; Trước</button>
+            <span class="slide-counter" id="slide-counter">1 / 8</span>
+            <button class="btn btn-primary" style="padding: 4px 10px;" onclick="nextSlide()" title="Phím mũi tên phải hoặc phím cách">Sau &rarr;</button>
+          </div>
+        </div>
+
+        <div class="slide-viewport" id="slide-viewport">
+          <!-- SLIDE CONTAINER (Rendered by JS) -->
+          <div id="slide-card-slot" style="width: 100%; display: flex; justify-content: center;"></div>
+
+          <!-- FULL TREE VIEW -->
+          <div class="full-tree-view" id="full-tree-view"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- TAB 1: OVERVIEW (SƯỜN BÀI)                               -->
+    <!-- ========================================================= -->
+    <div id="pane-overview" class="tab-pane">
       <div class="overview-container">
         <div class="overview-hero">
           <div>
-            <h2>Chiến Lược Thi Thực Hành Java Trên IntelliJ IDEA</h2>
-            <p>Được dùng IntelliJ nghĩa là có gợi ý cú pháp và sinh code tự động. <strong>Đừng học vẹt từng dòng code!</strong> Hãy nắm vững 6 khung sườn cốt lõi dưới đây, đi thi chỉ cần gõ đúng sườn và dùng phím tắt IntelliJ là lấy trọn điểm.</p>
+            <h2 style="font-size: var(--fs-h1); color:#fff; margin-bottom: 6px;">Chiến Lược Thi Thực Hành Java Trên IntelliJ IDEA</h2>
+            <p style="color: #c0c4ce; font-size: calc(var(--fs-base) * 0.98); line-height: 1.55;">
+              Được thi trên IntelliJ nghĩa là có gợi ý cú pháp và tự động sinh mã. <strong>Đừng học vẹt từng dòng code!</strong> Hãy nắm vững 6 khung sườn cốt lõi dưới đây, đi thi chỉ cần gõ đúng sườn và dùng phím tắt IntelliJ là lấy trọn điểm.
+            </p>
           </div>
-          <button class="btn btn-primary" onclick="switchTab('deepdive')">Bắt đầu luyện 35 bài &rarr;</button>
+          <button class="btn btn-primary" onclick="switchTab('deepdive')">Luyện 35 bài ngay &rarr;</button>
         </div>
 
         <div class="overview-card">
           <div class="card-head">
             <div class="card-title">1. Căn Bản, Toán Tử & I/O</div>
-            <div class="card-badge">Bẫy trôi lệnh & Format</div>
+            <span class="card-badge" style="background:#2b2518; color:#f7ba55;">Bẫy trôi lệnh & Format</span>
           </div>
           <div class="skeleton-box">// KHUNG NHẬP XUẤT AN TOÀN
 Scanner sc = new Scanner(System.in);
@@ -878,7 +1312,7 @@ System.out.printf("%s\t%s%n", col1, col2); // Cách nhau bởi Tab</div>
         <div class="overview-card">
           <div class="card-head">
             <div class="card-title">2. Toán Học & Số Học</div>
-            <div class="card-badge">Euclid, SNT, Đảo số</div>
+            <span class="card-badge" style="background:#1b2a38; color:#61afef;">Euclid, SNT, Đảo số</span>
           </div>
           <div class="skeleton-box">// 1. USCLN EUCLID (3 dòng):
 while (b != 0) { int t = b; b = a % b; a = t; } return a;
@@ -900,7 +1334,7 @@ while (n > 0) { rev = rev * 10 + n % 10; n /= 10; }</div>
         <div class="overview-card">
           <div class="card-head">
             <div class="card-title">3. Mảng 1D & Thống Kê</div>
-            <div class="card-badge">Tần suất & Sắp xếp</div>
+            <span class="card-badge" style="background:#1c3624; color:#62c453;">Tần suất & Sắp xếp</span>
           </div>
           <div class="skeleton-box">// MẢNG ĐẾM TẦN SUẤT ĐIỂM (0 đến 10):
 int[] tk = new int[11];
@@ -920,7 +1354,7 @@ Arrays.sort(arr);</div>
         <div class="overview-card">
           <div class="card-head">
             <div class="card-title">4. Mảng 2D & Ma Trận</div>
-            <div class="card-badge">Căn lề %8.2f & Cộng MT</div>
+            <span class="card-badge" style="background:#282033; color:#c980f7;">Căn lề %8.2f & Phép toán</span>
           </div>
           <div class="skeleton-box">// NHẬP VÀ IN MA TRẬN CĂN LỀ:
 double[][] a = new double[n][m];
@@ -939,7 +1373,7 @@ for (int i = 0; i < n; i++) {
         <div class="overview-card">
           <div class="card-head">
             <div class="card-title">5. Chuỗi & Collections (Map/Set)</div>
-            <div class="card-badge">Tách từ & Đếm số lần</div>
+            <span class="card-badge" style="background:#2b2216; color:#f5a623;">Tách từ & Đếm số lần</span>
           </div>
           <div class="skeleton-box">// TÁCH TỪ CHUẨN:
 String[] words = line.trim().split("\\s+");
@@ -959,7 +1393,7 @@ Set<String> set = new TreeSet<>(Arrays.asList(words));</div>
         <div class="overview-card">
           <div class="card-head">
             <div class="card-title">6. Lập Trình OOP (Trọng Tâm)</div>
-            <div class="card-badge">Kế thừa, Sinh code IntelliJ</div>
+            <span class="card-badge" style="background:#1b2a38; color:#4682f4;">Kế thừa, Sinh code IntelliJ</span>
           </div>
           <div class="skeleton-box">// QUY TẮC VÀNG VIẾT CLASS NHANH TRÊN INTELLIJ:
 // 1. Khai báo thuộc tính private
@@ -981,9 +1415,11 @@ class Book implements Comparable<Book> {
       </div>
     </div>
 
-    <!-- TAB 2: DEEP DIVE -->
+    <!-- ========================================================= -->
+    <!-- TAB 2: DEEP DIVE (35 BÀI TẬP)                            -->
+    <!-- ========================================================= -->
     <div id="pane-deepdive" class="tab-pane">
-      <div class="sidebar">
+      <div class="sidebar" id="sidebar">
         <div class="sidebar-search">
           <input type="text" id="search-box" class="search-input" placeholder="Tìm bài tập, tên hàm, class..." oninput="filterProblems()">
           <div class="filter-tags">
@@ -1003,27 +1439,29 @@ class Book implements Comparable<Book> {
       <div class="detail-view" id="detail-view"></div>
     </div>
 
-    <!-- TAB 3: FLASHCARDS -->
+    <!-- ========================================================= -->
+    <!-- TAB 3: FLASHCARDS                                        -->
+    <!-- ========================================================= -->
     <div id="pane-flashcards" class="tab-pane">
       <div class="flashcard-container">
         <div style="text-align: center;">
           <h2 style="font-size: var(--fs-h1); color: #fff;">Flashcards Phản Xạ Cú Pháp & Thuật Toán</h2>
-          <p style="color: var(--text-muted); font-size: var(--fs-base); margin-top: 6px;">Click vào thẻ để lật xem đáp án và code mẫu</p>
+          <p style="color: var(--text-muted); font-size: var(--fs-base); margin-top: 4px;">Chạm vào thẻ để lật xem đáp án và code mẫu</p>
         </div>
 
         <div class="card-scene">
           <div class="flashcard" id="flashcard" onclick="flipCard()">
             <div class="card-face card-front">
-              <span class="card-badge" id="fc-category">Chủ đề</span>
+              <span class="card-badge" id="fc-category" style="background:#32353a; color:#bcc0cb; padding:4px 8px; border-radius:4px; font-weight:600; font-size:12px; align-self:flex-start;">Chủ đề</span>
               <div style="font-size: calc(var(--fs-h1) * 1.05); font-weight: 700; text-align: center; line-height: 1.45;" id="fc-question">
                 Câu hỏi?
               </div>
-              <div style="text-align: center; color: var(--accent); font-size: calc(var(--fs-base) * 0.9); font-weight: 600;">(Click để lật xem code)</div>
+              <div style="text-align: center; color: var(--accent); font-size: calc(var(--fs-base) * 0.9); font-weight: 600;">(Chạm để lật xem code)</div>
             </div>
             <div class="card-face card-back">
-              <span class="card-badge" style="background:#183259; color:#61afef;">Giải pháp / Code mẫu</span>
-              <pre class="skeleton-box" style="margin: 12px 0; max-height: 230px;" id="fc-answer">Đáp án</pre>
-              <div style="text-align: center; color: var(--text-muted); font-size: calc(var(--fs-base) * 0.85);">Click để lật lại câu hỏi</div>
+              <span class="card-badge" style="background:#183259; color:#61afef; padding:4px 8px; border-radius:4px; font-weight:600; font-size:12px; align-self:flex-start;">Giải pháp / Code mẫu</span>
+              <pre class="skeleton-box" style="margin: 10px 0; max-height: 220px;" id="fc-answer">Đáp án</pre>
+              <div style="text-align: center; color: var(--text-muted); font-size: calc(var(--fs-base) * 0.85);">Chạm để lật lại câu hỏi</div>
             </div>
           </div>
         </div>
@@ -1036,80 +1474,86 @@ class Book implements Comparable<Book> {
       </div>
     </div>
 
-    <!-- TAB 4: INTELLIJ CHEAT SHEET -->
+    <!-- ========================================================= -->
+    <!-- TAB 4: INTELLIJ CHEAT SHEET                              -->
+    <!-- ========================================================= -->
     <div id="pane-intellij" class="tab-pane">
       <div class="overview-container" style="max-width: 1200px;">
         <div class="overview-hero">
           <div>
-            <h2>Phím Tắt Vàng IntelliJ IDEA Đi Thi Thực Hành</h2>
-            <p>Tận dụng triệt để IDE để code nhanh gấp 5 lần so với gõ tay, không bao giờ lo sai cú pháp hay quên cú pháp.</p>
+            <h2 style="font-size: var(--fs-h1); color:#fff; margin-bottom:6px;">Phím Tắt Vàng IntelliJ IDEA Đi Thi Thực Hành</h2>
+            <p style="color:#c0c4ce; font-size:calc(var(--fs-base)*0.98);">Tận dụng triệt để IDE để code nhanh gấp 5 lần so với gõ tay, không bao giờ lo sai cú pháp hay quên cú pháp.</p>
           </div>
         </div>
 
         <div class="overview-card">
           <div class="card-title">Live Templates (Gõ tắt sinh code)</div>
-          <table style="width:100%; border-collapse: collapse; font-size: var(--fs-base); color: #dfe1e5;">
-            <tr style="border-bottom: 1px solid #3e4147; text-align:left;">
-              <th style="padding: 10px;">Gõ tắt</th>
-              <th style="padding: 10px;">Mã tự động sinh ra</th>
-              <th style="padding: 10px;">Mô tả</th>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">psvm + Tab</td>
-              <td style="padding: 10px; font-family:var(--font-code);">public static void main(String[] args)</td>
-              <td style="padding: 10px; color:var(--text-muted);">Hàm main chính</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">sout + Tab</td>
-              <td style="padding: 10px; font-family:var(--font-code);">System.out.println();</td>
-              <td style="padding: 10px; color:var(--text-muted);">In xuống dòng</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">souf + Tab</td>
-              <td style="padding: 10px; font-family:var(--font-code);">System.out.printf("");</td>
-              <td style="padding: 10px; color:var(--text-muted);">In định dạng</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">fori + Tab</td>
-              <td style="padding: 10px; font-family:var(--font-code);">for (int i = 0; i < ...; i++)</td>
-              <td style="padding: 10px; color:var(--text-muted);">Vòng lặp for index</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">iter + Tab</td>
-              <td style="padding: 10px; font-family:var(--font-code);">for (Type item : collection)</td>
-              <td style="padding: 10px; color:var(--text-muted);">Vòng lặp foreach</td>
-            </tr>
-          </table>
+          <div class="table-responsive">
+            <table style="width:100%; border-collapse: collapse; font-size: var(--fs-base); color: #dfe1e5; min-width: 480px;">
+              <tr style="border-bottom: 1px solid #3e4147; text-align:left;">
+                <th style="padding: 10px;">Gõ tắt</th>
+                <th style="padding: 10px;">Mã tự động sinh ra</th>
+                <th style="padding: 10px;">Mô tả</th>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">psvm + Tab</td>
+                <td style="padding: 10px; font-family:var(--font-code);">public static void main(String[] args)</td>
+                <td style="padding: 10px; color:var(--text-muted);">Hàm main chính</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">sout + Tab</td>
+                <td style="padding: 10px; font-family:var(--font-code);">System.out.println();</td>
+                <td style="padding: 10px; color:var(--text-muted);">In xuống dòng</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">souf + Tab</td>
+                <td style="padding: 10px; font-family:var(--font-code);">System.out.printf("");</td>
+                <td style="padding: 10px; color:var(--text-muted);">In định dạng</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">fori + Tab</td>
+                <td style="padding: 10px; font-family:var(--font-code);">for (int i = 0; i < ...; i++)</td>
+                <td style="padding: 10px; color:var(--text-muted);">Vòng lặp for index</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#61afef; font-weight:bold;">iter + Tab</td>
+                <td style="padding: 10px; font-family:var(--font-code);">for (Type item : collection)</td>
+                <td style="padding: 10px; color:var(--text-muted);">Vòng lặp foreach</td>
+              </tr>
+            </table>
+          </div>
         </div>
 
         <div class="overview-card">
           <div class="card-title">Phím Tắt Tự Sinh Mã Tối Thượng (Tự viết cả Class)</div>
-          <table style="width:100%; border-collapse: collapse; font-size: var(--fs-base); color: #dfe1e5;">
-            <tr style="border-bottom: 1px solid #3e4147; text-align:left;">
-              <th style="padding: 10px;">Phím tắt</th>
-              <th style="padding: 10px;">Chức năng cực đỉnh</th>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold; white-space:nowrap;">Alt + Insert<br><small style="color:#aaa;">(Fn + Alt + Insert)</small></td>
-              <td style="padding: 10px; line-height: 1.6;">Mở bảng <strong>Generate</strong>: Tự động sinh Constructor (chọn tất cả biến), Getter and Setter, toString(), equals and hashCode(). <em>(Khai báo 5 biến xong bấm phím này là xong nguyên bài OOP trong 3 giây!)</em></td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Ctrl + Alt + L</td>
-              <td style="padding: 10px; line-height: 1.6;"><strong>Reformat Code:</strong> Tự căn chỉnh thụt lề, dấu cách, ngoặc nhọn cực chuẩn và đẹp mắt ngay lập tức.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Alt + Enter</td>
-              <td style="padding: 10px; line-height: 1.6;"><strong>Show Intention Actions / Quick Fix:</strong> Sửa lỗi nhanh, tự import thư viện thiếu, tự implement methods của interface (Comparable...).</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #32353a;">
-              <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Ctrl + /</td>
-              <td style="padding: 10px; line-height: 1.6;">Bật / tắt comment dòng code hiện tại.</td>
-            </tr>
-            <tr>
-              <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Shift + F10</td>
-              <td style="padding: 10px; line-height: 1.6;">Chạy chương trình (Run Main).</td>
-            </tr>
-          </table>
+          <div class="table-responsive">
+            <table style="width:100%; border-collapse: collapse; font-size: var(--fs-base); color: #dfe1e5; min-width: 480px;">
+              <tr style="border-bottom: 1px solid #3e4147; text-align:left;">
+                <th style="padding: 10px;">Phím tắt</th>
+                <th style="padding: 10px;">Chức năng cực đỉnh</th>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold; white-space:nowrap;">Alt + Insert<br><small style="color:#aaa;">(Fn + Alt + Insert)</small></td>
+                <td style="padding: 10px; line-height: 1.6;">Mở bảng <strong>Generate</strong>: Tự động sinh Constructor, Getter and Setter, toString(), equals and hashCode(). <em>(Khai báo 5 biến xong bấm phím này là xong nguyên bài OOP trong 3 giây!)</em></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Ctrl + Alt + L</td>
+                <td style="padding: 10px; line-height: 1.6;"><strong>Reformat Code:</strong> Tự căn chỉnh thụt lề, dấu cách, ngoặc nhọn cực chuẩn và đẹp mắt ngay lập tức.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Alt + Enter</td>
+                <td style="padding: 10px; line-height: 1.6;"><strong>Show Intention Actions / Quick Fix:</strong> Sửa lỗi nhanh, tự import thư viện thiếu, tự implement methods của interface (Comparable...).</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #32353a;">
+                <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Ctrl + /</td>
+                <td style="padding: 10px; line-height: 1.6;">Bật / tắt comment dòng code hiện tại.</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; font-family:var(--font-code); color:#e5a84b; font-weight:bold;">Shift + F10</td>
+                <td style="padding: 10px; line-height: 1.6;">Chạy chương trình (Run Main).</td>
+              </tr>
+            </table>
+          </div>
         </div>
 
       </div>
@@ -1117,9 +1561,9 @@ class Book implements Comparable<Book> {
 
   </div>
 
-  <div id="toast">Đã copy mã vào clipboard! Mở IntelliJ dán là xong!</div>
+  <div id="toast">Đã copy mã vào clipboard!</div>
 
-  <!-- EMBEDDED PROBLEMS & FLASHCARDS DATA -->
+  <!-- SCRIPT DATA & LOGIC -->
   <script>
     const PROBLEMS = [
   {
@@ -1761,64 +2205,796 @@ class Book implements Comparable<Book> {
     ]
   }
 ];
-    const FLASHCARDS = [{"category": "Căn bản I/O", "q": "Làm thế nào để tránh lỗi trôi lệnh khi dùng Scanner đọc số rồi đọc xâu trong Java?", "a": "Sau sc.nextInt() hoặc sc.nextDouble(), gọi thêm một lệnh sc.nextLine() để nuốt ký tự newline '\\n' còn sót trong buffer:\n\nint age = sc.nextInt();\nsc.nextLine(); // Bắt buộc nuốt '\\n'!\nString name = sc.nextLine();"}, {"category": "Căn bản I/O", "q": "Tại sao công thức C sang F: (9 / 5) * C + 32 lại tính ra kết quả sai trong Java?", "a": "Vì 9 và 5 là số nguyên int, phép chia 9 / 5 là phép chia lấy phần nguyên ra 1!\n\nSửa lại: Dùng số thực 9.0 / 5:\ndouble f = (9.0 / 5) * c + 32;"}, {"category": "Toán học", "q": "Viết thuật toán Euclid tìm ước số chung lớn nhất (GCD) của 2 số a, b trong 3 dòng?", "a": "public static int gcd(int a, int b) {\n    a = Math.abs(a); b = Math.abs(b);\n    while (b != 0) {\n        int t = b; b = a % b; a = t;\n    }\n    return a;\n}"}, {"category": "Toán học", "q": "Điều kiện kiểm tra số nguyên tố tối ưu và điều kiện biên là gì?", "a": "1. Nếu n < 2 => return false\n2. Duyệt từ i = 2 đến i * i <= n:\n   Nếu n % i == 0 => return false\n3. Return true"}, {"category": "Toán học", "q": "Cách đảo ngược số nguyên n bằng vòng lặp while?", "a": "int rev = 0;\nwhile (n > 0) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\nreturn rev;"}, {"category": "Mảng 1D", "q": "Cách thống kê số lượng điểm sinh viên (thang 0-10) mà KHÔNG cần dùng 11 câu if-else?", "a": "Dùng mảng 11 phần tử làm mảng tần suất:\nint[] tk = new int[11];\nfor (int i = 0; i < n; i++) {\n    int diem = sc.nextInt();\n    tk[diem]++; // Tăng trực tiếp phần tử thứ 'diem'\n}"}, {"category": "Mảng 2D", "q": "Cách in phần tử ma trận số thực căn lề phải đúng 8 vị trí và 2 số thập phân?", "a": "System.out.printf(\"%8.2f\", a[i][j]);\n\nSau mỗi hàng nhớ in xuống dòng:\nSystem.out.println();"}, {"category": "Chuỗi & Collections", "q": "Cách đếm tần suất xuất hiện của từ trong chuỗi bằng Map chỉ trong 1 dòng ngắn gọn?", "a": "Map<String, Integer> map = new TreeMap<>();\nfor (String w : words) {\n    map.put(w, map.getOrDefault(w, 0) + 1);\n}"}, {"category": "Chuỗi & Collections", "q": "Làm sao để loại bỏ các từ trùng nhau và tự sắp xếp tăng dần theo bảng chữ cái A-Z?", "a": "Dùng TreeSet:\nSet<String> set = new TreeSet<>(Arrays.asList(words));"}, {"category": "OOP", "q": "Phím tắt IntelliJ để tự động tạo Constructor, Getter/Setter và toString là gì?", "a": "Ấn tổ hợp phím: Alt + Insert (trên laptop là Fn + Alt + Insert)\nChọn Constructor, Getter and Setter hoặc toString() -> Chọn tất cả các biến -> Enter."}, {"category": "OOP", "q": "Khi lớp con kế thừa lớp cha, dòng đầu tiên trong hàm khởi tạo của lớp con bắt buộc phải là gì?", "a": "Phải gọi super(...) để khởi tạo các thuộc tính của lớp cha trước:\n\npublic Student(String name, int age, String id) {\n    super(name, age); // DÒNG ĐẦU TIÊN!\n    this.id = id;\n}"}, {"category": "OOP", "q": "Làm sao để lớp Book có thể sắp xếp được bằng hàm Collections.sort(list)?", "a": "Cho lớp Book implements Comparable<Book> và viết hàm compareTo:\n\n@Override\npublic int compareTo(Book other) {\n    return Double.compare(this.price, other.price);\n}"}, {"category": "OOP", "q": "Biến static khác biến thường (instance) ở điểm nào, và cách truy cập chuẩn là gì?", "a": "Biến static là biến dùng chung của toàn bộ lớp (chia sẻ giữa mọi object).\nTruy cập qua tên lớp:\nClassName.variableName\nKhông dùng this.variableName!"}, {"category": "Chuỗi", "q": "Tại sao trong Java không được so sánh 2 chuỗi bằng dấu == (ví dụ str1 == str2)?", "a": "Dấu == so sánh địa chỉ ô nhớ (tham chiếu). Hai chuỗi có cùng nội dung vẫn có thể nằm ở 2 ô nhớ khác nhau dẫn đến kết quả false!\n\nLuôn dùng: str1.equals(str2) hoặc str1.equalsIgnoreCase(str2)."}, {"category": "IntelliJ", "q": "Phím tắt IntelliJ tự động định dạng căn chỉnh lề (Reformat Code) chuẩn chỉ ngay lập tức?", "a": "Ctrl + Alt + L"}];
+    const FLASHCARDS = [
+    {
+        "category": "Căn bản I/O",
+        "q": "Làm thế nào để tránh lỗi trôi lệnh khi dùng Scanner đọc số rồi đọc xâu trong Java?",
+        "a": "Sau sc.nextInt() hoặc sc.nextDouble(), gọi thêm một lệnh sc.nextLine() để nuốt ký tự newline '\\n' còn sót trong buffer:\n\nint age = sc.nextInt();\nsc.nextLine(); // Bắt buộc nuốt '\\n'!\nString name = sc.nextLine();"
+    },
+    {
+        "category": "Căn bản I/O",
+        "q": "Tại sao công thức C sang F: (9 / 5) * C + 32 lại tính ra kết quả sai trong Java?",
+        "a": "Vì 9 và 5 là số nguyên int, phép chia 9 / 5 là phép chia lấy phần nguyên ra 1!\n\nSửa lại: Dùng số thực 9.0 / 5:\ndouble f = (9.0 / 5) * c + 32;"
+    },
+    {
+        "category": "Toán học",
+        "q": "Viết thuật toán Euclid tìm ước số chung lớn nhất (GCD) của 2 số a, b trong 3 dòng?",
+        "a": "public static int gcd(int a, int b) {\n    a = Math.abs(a); b = Math.abs(b);\n    while (b != 0) {\n        int t = b; b = a % b; a = t;\n    }\n    return a;\n}"
+    },
+    {
+        "category": "Toán học",
+        "q": "Điều kiện kiểm tra số nguyên tố tối ưu và điều kiện biên là gì?",
+        "a": "1. Nếu n < 2 => return false\n2. Duyệt từ i = 2 đến i * i <= n:\n   Nếu n % i == 0 => return false\n3. Return true"
+    },
+    {
+        "category": "Toán học",
+        "q": "Cách đảo ngược số nguyên n bằng vòng lặp while?",
+        "a": "int rev = 0;\nwhile (n > 0) {\n    rev = rev * 10 + n % 10;\n    n /= 10;\n}\nreturn rev;"
+    },
+    {
+        "category": "Mảng 1D",
+        "q": "Cách thống kê số lượng điểm sinh viên (thang 0-10) mà KHÔNG cần dùng 11 câu if-else?",
+        "a": "Dùng mảng 11 phần tử làm mảng tần suất:\nint[] tk = new int[11];\nfor (int i = 0; i < n; i++) {\n    int diem = sc.nextInt();\n    tk[diem]++; // Tăng trực tiếp phần tử thứ 'diem'\n}"
+    },
+    {
+        "category": "Mảng 2D",
+        "q": "Cách in phần tử ma trận số thực căn lề phải đúng 8 vị trí và 2 số thập phân?",
+        "a": "System.out.printf(\"%8.2f\", a[i][j]);\n\nSau mỗi hàng nhớ in xuống dòng:\nSystem.out.println();"
+    },
+    {
+        "category": "Chuỗi & Collections",
+        "q": "Cách đếm tần suất xuất hiện của từ trong chuỗi bằng Map chỉ trong 1 dòng ngắn gọn?",
+        "a": "Map<String, Integer> map = new TreeMap<>();\nfor (String w : words) {\n    map.put(w, map.getOrDefault(w, 0) + 1);\n}"
+    },
+    {
+        "category": "Chuỗi & Collections",
+        "q": "Làm sao để loại bỏ các từ trùng nhau và tự sắp xếp tăng dần theo bảng chữ cái A-Z?",
+        "a": "Dùng TreeSet:\nSet<String> set = new TreeSet<>(Arrays.asList(words));"
+    },
+    {
+        "category": "OOP",
+        "q": "Phím tắt IntelliJ để tự động tạo Constructor, Getter/Setter và toString là gì?",
+        "a": "Ấn tổ hợp phím: Alt + Insert (trên laptop là Fn + Alt + Insert)\nChọn Constructor, Getter and Setter hoặc toString() -> Chọn tất cả các biến -> Enter."
+    },
+    {
+        "category": "OOP",
+        "q": "Khi lớp con kế thừa lớp cha, dòng đầu tiên trong hàm khởi tạo của lớp con bắt buộc phải là gì?",
+        "a": "Phải gọi super(...) để khởi tạo các thuộc tính của lớp cha trước:\n\npublic Student(String name, int age, String id) {\n    super(name, age); // DÒNG ĐẦU TIÊN!\n    this.id = id;\n}"
+    },
+    {
+        "category": "OOP",
+        "q": "Làm sao để lớp Book có thể sắp xếp được bằng hàm Collections.sort(list)?",
+        "a": "Cho lớp Book implements Comparable<Book> và viết hàm compareTo:\n\n@Override\npublic int compareTo(Book other) {\n    return Double.compare(this.price, other.price);\n}"
+    },
+    {
+        "category": "OOP",
+        "q": "Biến static khác biến thường (instance) ở điểm nào, và cách truy cập chuẩn là gì?",
+        "a": "Biến static là biến dùng chung của toàn bộ lớp (chia sẻ giữa mọi object).\nTruy cập qua tên lớp:\nClassName.variableName\nKhông dùng this.variableName!"
+    },
+    {
+        "category": "Chuỗi",
+        "q": "Tại sao trong Java không được so sánh 2 chuỗi bằng dấu == (ví dụ str1 == str2)?",
+        "a": "Dấu == so sánh địa chỉ ô nhớ (tham chiếu). Hai chuỗi có cùng nội dung vẫn có thể nằm ở 2 ô nhớ khác nhau dẫn đến kết quả false!\n\nLuôn dùng: str1.equals(str2) hoặc str1.equalsIgnoreCase(str2)."
+    },
+    {
+        "category": "IntelliJ",
+        "q": "Phím tắt IntelliJ tự động định dạng căn chỉnh lề (Reformat Code) chuẩn chỉ ngay lập tức?",
+        "a": "Ctrl + Alt + L"
+    }
+];
 
-    let currentProblemId = PROBLEMS[0].id;
+    /* 8 PRESENTATION SLIDES & MINDMAP DATA */
+    const SLIDES_DATA = [
+      {
+        id: "slide-1",
+        badge: "BẢN ĐỒ TỔNG THỂ",
+        title: "Bản Đồ Tư Duy Toàn Bộ Kiến Thức Java VMU",
+        subtitle: "6 Trụ Cột Ôn Thi Thực Hành • Không học vẹt, nắm chắc nguyên lý",
+        nodes: [
+          {
+            title: "1. Căn Bản, Toán Tử & I/O",
+            color: "#3574f0",
+            branches: [
+              "Scanner: <code>nextInt()</code>, <code>nextDouble()</code>, <code>nextLine()</code>",
+              "Bẫy chí mạng: <strong>Trôi lệnh</strong> sau khi đọc số",
+              "Định dạng printf: <code>%d</code>, <code>%.2f</code>, <code>%s</code>, <code>%n</code>, <code>%%</code>",
+              "Ép kiểu: <code>(double)a / b</code> tránh chia nguyên ra 0"
+            ]
+          },
+          {
+            title: "2. Thuật Toán Số Học",
+            color: "#499c54",
+            branches: [
+              "USCLN (GCD) Euclid 3 dòng: <code>while (b != 0)</code>",
+              "BCNN (LCM): <code>(a * b) / GCD(a, b)</code>",
+              "Số nguyên tố (SNT): Duyệt tới <code>i * i <= n</code>",
+              "Đảo số & Tách chữ số: <code>rev = rev * 10 + n % 10</code>"
+            ]
+          },
+          {
+            title: "3. Mảng 1 Chiều & Thống Kê",
+            color: "#f5a623",
+            branches: [
+              "Mảng đếm tần suất O(N): <code>int[] tk = new int[11]</code>",
+              "Công thức % chuẩn: <code>100.0 * tk[i] / n</code> (nhân 100.0 trước!)",
+              "Bài Marathon: Tìm Min 1 và Min 2 đồng thời",
+              "Sắp xếp thư viện: <code>Arrays.sort(arr)</code>"
+            ]
+          },
+          {
+            title: "4. Mảng 2 Chiều & Ma Trận",
+            color: "#b162f1",
+            branches: [
+              "Ma trận chữ nhật n x m: <code>double[][] a = new double[n][m]</code>",
+              "In căn lề chuẩn: <code>printf(\"%8.2f\", a[i][j])</code>",
+              "Các phép toán: Cộng trừ ma trận, Nhân 2 ma trận",
+              "Đường chéo chính: <code>i == j</code>, đường chéo phụ: <code>i + j == n - 1</code>"
+            ]
+          },
+          {
+            title: "5. Chuỗi & Collections",
+            color: "#e57832",
+            branches: [
+              "Bất biến String: Tuyệt đối dùng <code>equals()</code>, cấm dùng <code>==</code>",
+              "Tách từ chuẩn: <code>line.trim().split(\"\\\\s+\")</code>",
+              "Đếm tần suất từ: <code>TreeMap&lt;String, Integer&gt;</code> tự xếp A-Z",
+              "Lọc từ độc nhất: <code>TreeSet&lt;String&gt;</code>"
+            ]
+          },
+          {
+            title: "6. Lập Trình OOP (Trọng Tâm)",
+            color: "#e06c75",
+            branches: [
+              "Khung Class: private fields, constructor, getter/setter, toString",
+              "Kế thừa: <code>super()</code> phải nằm ở dòng lệnh ĐẦU TIÊN",
+              "Sắp xếp đối tượng: <code>implements Comparable&lt;T&gt;</code>",
+              "Thuộc tính static: Dùng chung, gọi qua <code>ClassName.field</code>"
+            ]
+          }
+        ],
+        trap: "<strong>Chiến thuật phòng thi:</strong> Không cần gõ lại từ đầu tất cả. Nhập Scanner và khung sườn trước, sau đó dùng phím tắt IntelliJ sinh code tự động để tiết kiệm 70% thời gian!",
+        tip: "Nhấn phím mũi tên <strong>&rarr;</strong> hoặc phím cách để xem chi tiết từng chuyên đề bên dưới."
+      },
+      {
+        id: "slide-2",
+        badge: "CHUYÊN ĐỀ 1",
+        title: "Sơ Đồ Tư Duy: Căn Bản, Toán Tử & Bẫy I/O",
+        subtitle: "Làm chủ Scanner, Nuốt phím Enter và In định dạng printf",
+        nodes: [
+          {
+            title: "Nhập Dữ Liệu (Scanner)",
+            color: "#3574f0",
+            branches: [
+              "Khởi tạo: <code>Scanner sc = new Scanner(System.in);</code>",
+              "Đọc số: <code>sc.nextInt()</code>, <code>sc.nextDouble()</code>",
+              "Đọc cả dòng văn bản: <code>sc.nextLine()</code>",
+              "Đọc từng từ cách bởi dấu cách: <code>sc.next()</code>"
+            ]
+          },
+          {
+            title: "Bẫy Trôi Lệnh Chí Mạng",
+            color: "#f5a623",
+            branches: [
+              "Hiện tượng: Nhập tuổi xong chương trình bỏ qua phần nhập tên!",
+              "Nguyên nhân: <code>nextInt()</code> chỉ đọc số, để lại ký tự Enter <code>'\\n'</code> trong buffer",
+              "Khắc phục 1: Gọi <code>sc.nextLine()</code> để nuốt ký tự <code>'\\n'</code> thừa",
+              "Khắc phục 2: Dùng <code>Integer.parseInt(sc.nextLine())</code>"
+            ]
+          },
+          {
+            title: "Định Dạng Xuất (printf)",
+            color: "#499c54",
+            branches: [
+              "<code>%d</code>: Số nguyên (ví dụ: tuổi, số lượng)",
+              "<code>%.2f</code>: Số thực làm tròn 2 chữ số thập phân",
+              "<code>%8.2f</code>: Số thực căn phải, chiếm đúng 8 ô (chuẩn ma trận)",
+              "<code>%n</code> hoặc <code>\\n</code>: Xuống dòng an toàn đa nền tảng",
+              "<code>%%</code>: In ra ký tự phần trăm (%) thực sự"
+            ]
+          },
+          {
+            title: "Ép Kiểu & Chia Số Thực",
+            color: "#b162f1",
+            branches: [
+              "Bẫy <code>9 / 5</code>: Trong Java ra <strong>1</strong> (chia nguyên!)",
+              "Công thức C sang F: Bắt buộc viết <code>(9.0 / 5) * c + 32</code>",
+              "Chia 2 biến nguyên: <code>(double)a / b</code>",
+              "Toán tử Math: <code>Math.sqrt()</code>, <code>Math.pow()</code>, <code>Math.abs()</code>"
+            ]
+          }
+        ],
+        codeSnippet: `// KHUNG CHUẨN TRÁNH BẪY TRÔI LỆNH:
+Scanner sc = new Scanner(System.in);
+System.out.print("Nhập tuổi: ");
+int age = sc.nextInt();
+sc.nextLine(); // BẮT BUỘC: Nuốt Enter còn thừa!
+
+System.out.print("Nhập họ tên: ");
+String name = sc.nextLine();
+
+System.out.printf("Tên: %s | Tuổi: %d | Điểm: %.2f%%%n", name, age, 9.5);`,
+        trap: "Nếu sau khi đọc số mà bạn dùng <code>sc.nextLine()</code> để đọc chuỗi mà quên dòng nuốt Enter, bài thi sẽ bị 0 điểm vì chuỗi đọc vào là xâu rỗng!",
+        tip: "Gõ <code>souf + Tab</code> trên IntelliJ để sinh nhanh lệnh <code>System.out.printf(\"\");</code>."
+      },
+      {
+        id: "slide-3",
+        badge: "CHUYÊN ĐỀ 2",
+        title: "Sơ Đồ Tư Duy: Thuật Toán Số Học Cốt Lõi",
+        subtitle: "Euclid USCLN/BCNN, Kiểm tra SNT tối ưu, Đảo số và Hệ cơ số",
+        nodes: [
+          {
+            title: "USCLN (GCD) & BCNN (LCM)",
+            color: "#499c54",
+            branches: [
+              "Bản chất: Thuật toán Euclid chia lấy dư liên tiếp",
+              "Xử lý số âm: Dùng <code>Math.abs(a)</code> và <code>Math.abs(b)</code>",
+              "Mã 3 dòng: <code>while (b != 0) { int t = b; b = a % b; a = t; }</code>",
+              "BCNN: <code>(long)a * b / gcd(a, b)</code> (ép kiểu tránh tràn int)"
+            ]
+          },
+          {
+            title: "Kiểm Tra Số Nguyên Tố",
+            color: "#3574f0",
+            branches: [
+              "Biên nhỏ: Nếu <code>n < 2</code> => lập tức trả về <code>false</code>",
+              "Vòng lặp tối ưu: Duyệt từ <code>i = 2</code> đến <code>i * i <= n</code>",
+              "Tại sao <code>i * i <= n</code>? Tránh gọi hàm <code>Math.sqrt()</code> chậm",
+              "Nếu <code>n % i == 0</code> => <code>false</code>, hết vòng lặp => <code>true</code>"
+            ]
+          },
+          {
+            title: "Đảo Số & Tách Chữ Số",
+            color: "#f5a623",
+            branches: [
+              "Khởi tạo: <code>int rev = 0;</code>",
+              "Tách số cuối: <code>n % 10</code>",
+              "Dịch chữ số: <code>rev = rev * 10 + n % 10;</code>",
+              "Cắt số cuối: <code>n /= 10;</code> lặp đến khi <code>n == 0</code>"
+            ]
+          },
+          {
+            title: "Số Hoàn Hảo & Cơ Số",
+            color: "#b162f1",
+            branches: [
+              "Số hoàn hảo: Tổng ước thực sự (từ 1 đến <code>n / 2</code>) bằng <code>n</code>",
+              "Chuyển nhị phân: <code>Integer.toBinaryString(n)</code>",
+              "Chuyển Hexa: <code>Integer.toHexString(n).toUpperCase()</code>",
+              "Chuyển bát phân: <code>Integer.toOctalString(n)</code>"
+            ]
+          }
+        ],
+        codeSnippet: `// 1. EUCLID GCD:
+public static int gcd(int a, int b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b != 0) { int t = b; b = a % b; a = t; }
+    return a;
+}
+
+// 2. KIỂM TRA SNT TỐI ƯU:
+public static boolean isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) if (n % i == 0) return false;
+    return true;
+}`,
+        trap: "Kiểm tra SNT quên điều kiện <code>n < 2</code> sẽ sai với số 0 và 1 (0 và 1 KHÔNG PHẢI là số nguyên tố).",
+        tip: "Hàm GCD Euclid cực kỳ hay xuất hiện trong cả bài toán phân số lẫn bài toán đại số."
+      },
+      {
+        id: "slide-4",
+        badge: "CHUYÊN ĐỀ 3",
+        title: "Sơ Đồ Tư Duy: Mảng 1 Chiều & Xử Lý Thống Kê",
+        subtitle: "Mảng tần suất O(N), Tính tỷ lệ %, Marathon Min 1/2 và Arrays helper",
+        nodes: [
+          {
+            title: "Kỹ Thuật Mảng Tần Suất",
+            color: "#f5a623",
+            branches: [
+              "Bài toán: Thống kê số lượng sinh viên đạt từng điểm (0 đến 10)",
+              "Cách ngây thơ: Dùng 11 câu <code>if-else</code> (dài 50 dòng, dễ sai)",
+              "Cách chuẩn O(N): Tạo mảng 11 phần tử: <code>int[] tk = new int[11];</code>",
+              "Cập nhật trực tiếp: <code>tk[score]++;</code> chỉ trong 1 dòng!"
+            ]
+          },
+          {
+            title: "Công Thức Tính Tỉ Lệ %",
+            color: "#e06c75",
+            branches: [
+              "Bẫy chia nguyên: <code>tk[i] / n * 100</code> luôn ra <strong>0</strong>!",
+              "Công thức đúng: <code>100.0 * tk[i] / n</code> (nhân 100.0 trước)",
+              "In đẹp: <code>System.out.printf(\"%.2f%%\\n\", tile);</code>"
+            ]
+          },
+          {
+            title: "Tìm Min 1 & Min 2 (Marathon)",
+            color: "#3574f0",
+            branches: [
+              "Bài toán: Tìm vận động viên về nhất và về nhì trong 1 lượt duyệt",
+              "Nếu <code>t &lt; min1</code>: Đẩy <code>min2 = min1</code> rồi mới gán <code>min1 = t</code>",
+              "Nếu <code>t &gt; min1 && t &lt; min2</code>: Gán <code>min2 = t</code>"
+            ]
+          },
+          {
+            title: "Thư Viện java.util.Arrays",
+            color: "#499c54",
+            branches: [
+              "Sắp xếp tăng dần: <code>Arrays.sort(arr);</code>",
+              "In mảng nhanh: <code>System.out.println(Arrays.toString(arr));</code>",
+              "Gán giá trị mặc định: <code>Arrays.fill(arr, -1);</code>"
+            ]
+          }
+        ],
+        codeSnippet: `// THỐNG KÊ ĐIỂM VÀ TỈ LỆ % SIÊU NGẮN GỌN:
+int[] tk = new int[11];
+for (int i = 0; i < n; i++) {
+    int diem = sc.nextInt();
+    tk[diem]++;
+}
+
+for (int i = 0; i <= 10; i++) {
+    double pct = 100.0 * tk[i] / n;
+    System.out.printf("Điểm %2d: %3d SV (%6.2f%%)%n", i, tk[i], pct);
+}`,
+        trap: "Khi khởi tạo mảng tần suất cho điểm 0..10, mảng phải có độ dài là 11 (<code>new int[11]</code>). Nếu khai báo <code>new int[10]</code> sẽ bị lỗi <code>ArrayIndexOutOfBoundsException</code> khi gặp điểm 10!",
+        tip: "Gõ <code>fori + Tab</code> trên IntelliJ để tự động sinh vòng lặp duyệt mảng."
+      },
+      {
+        id: "slide-5",
+        badge: "CHUYÊN ĐỀ 4",
+        title: "Sơ Đồ Tư Duy: Mảng 2 Chiều & Đại Số Ma Trận",
+        subtitle: "Căn lề %8.2f, Cộng/Trừ/Nhân ma trận và Duyệt đường chéo",
+        nodes: [
+          {
+            title: "Khai Báo & Duyệt Ma Trận",
+            color: "#b162f1",
+            branches: [
+              "Khai báo chữ nhật: <code>double[][] a = new double[n][m];</code>",
+              "n là số hàng (chỉ số <code>i</code> từ 0 đến n-1)",
+              "m là số cột (chỉ số <code>j</code> từ 0 đến m-1)",
+              "Duyệt 2 vòng for lồng: ngoài theo hàng, trong theo cột"
+            ]
+          },
+          {
+            title: "Quy Chuẩn In Căn Lề",
+            color: "#3574f0",
+            branches: [
+              "Mỗi phần tử in: <code>System.out.printf(\"%8.2f\", a[i][j]);</code>",
+              "Ý nghĩa: Chiếm đúng 8 vị trí, căn lề phải, 2 chữ số thập phân",
+              "Sau khi in hết 1 hàng (hết vòng lặp j): <code>System.out.println();</code>"
+            ]
+          },
+          {
+            title: "Cộng & Nhân Ma Trận",
+            color: "#499c54",
+            branches: [
+              "Cộng/Trừ: Cùng kích thước n x m, <code>c[i][j] = a[i][j] + b[i][j]</code>",
+              "Nhân: Ma trận A (n x p) nhân B (p x m) ra C (n x m)",
+              "3 vòng lặp: <code>i (0..n), j (0..m), k (0..p)</code>: <code>c[i][j] += a[i][k] * b[k][j]</code>"
+            ]
+          },
+          {
+            title: "Ma Trận Vuông & Đường Chéo",
+            color: "#f5a623",
+            branches: [
+              "Đường chéo chính: Các phần tử có <code>i == j</code>",
+              "Đường chéo phụ: Các phần tử có <code>i + j == n - 1</code>",
+              "Ma trận đối xứng: <code>a[i][j] == a[j][i]</code> với mọi i, j"
+            ]
+          }
+        ],
+        codeSnippet: `// HÀM IN MA TRẬN CHUẨN ĐỀ THI VMU:
+public static void printMatrix(double[][] a, int n, int m) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            System.out.printf("%8.2f", a[i][j]);
+        }
+        System.out.println(); // Xuống dòng mỗi hàng
+    }
+}`,
+        trap: "Phép nhân ma trận đòi hỏi số cột của ma trận A phải bằng số hàng của ma trận B. Đừng quên gán <code>c[i][j] = 0</code> trước khi cộng dồn tích <code>a[i][k] * b[k][j]</code>.",
+        tip: "Trong bài thi ma trận, hãy tách thành các hàm riêng biệt: <code>inputMatrix</code>, <code>sumMatrix</code>, <code>printMatrix</code> để code mạch lạc và ăn trọn điểm cấu trúc."
+      },
+      {
+        id: "slide-6",
+        badge: "CHUYÊN ĐỀ 5",
+        title: "Sơ Đồ Tư Duy: Xử Lý Chuỗi & Collections (Map, Set)",
+        subtitle: "Chuẩn hóa chuỗi, Split Regex, Đếm từ với TreeMap và Lọc trùng với TreeSet",
+        nodes: [
+          {
+            title: "Bản Chất Chuỗi (String)",
+            color: "#e57832",
+            branches: [
+              "String là <strong>bất biến (immutable)</strong>",
+              "So sánh nội dung: BẮT BUỘC <code>str1.equals(str2)</code>",
+              "CẤM dùng <code>==</code> (vì <code>==</code> chỉ so sánh địa chỉ ô nhớ)",
+              "Không phân biệt hoa thường: <code>str1.equalsIgnoreCase(str2)</code>"
+            ]
+          },
+          {
+            title: "Tách Từ Chuẩn Hóa",
+            color: "#3574f0",
+            branches: [
+              "Cắt khoảng trắng đầu cuối: <code>line.trim()</code>",
+              "Tách từ bởi 1 hoặc nhiều dấu cách: <code>line.split(\"\\\\s+\")</code>",
+              "Dấu <code>\\\\s+</code> là Regular Expression xử lý mọi loại dấu cách, Tab"
+            ]
+          },
+          {
+            title: "Đếm Tần Suất Bằng Map",
+            color: "#499c54",
+            branches: [
+              "Dùng <code>Map&lt;String, Integer&gt; map = new TreeMap&lt;&gt;();</code>",
+              "TreeMap tự động sắp xếp các từ tăng dần theo từ điển A-Z",
+              "Cú pháp 1 dòng: <code>map.put(w, map.getOrDefault(w, 0) + 1);</code>"
+            ]
+          },
+          {
+            title: "Lọc Từ Trùng Bằng Set",
+            color: "#b162f1",
+            branches: [
+              "Dùng <code>Set&lt;String&gt; set = new TreeSet&lt;&gt;();</code>",
+              "Set tự động loại bỏ tất cả các phần tử trùng lặp",
+              "Chuyển mảng sang Set trong 1 dòng: <code>new TreeSet&lt;&gt;(Arrays.asList(words));</code>"
+            ]
+          }
+        ],
+        codeSnippet: `// TÁCH TỪ VÀ ĐẾM TẦN SUẤT XUẤT HIỆN SẮP XẾP A-Z:
+String line = "java python c++ java oop java python";
+String[] words = line.trim().split("\\s+");
+
+Map<String, Integer> map = new TreeMap<>();
+for (String w : words) {
+    map.put(w, map.getOrDefault(w, 0) + 1);
+}
+
+// In kết quả
+for (Map.Entry<String, Integer> e : map.entrySet()) {
+    System.out.printf("%s: %d lần%n", e.getKey(), e.getValue());
+}`,
+        trap: "Trong Java so sánh chuỗi bằng <code>==</code> là lỗi phổ biến nhất khiến sinh viên mất điểm oan. Luôn nhớ dùng <code>.equals()</code>!",
+        tip: "Dùng <code>iter + Tab</code> trên IntelliJ để duyệt nhanh các Entry của Map hoặc phần tử của Set."
+      },
+      {
+        id: "slide-7",
+        badge: "CHUYÊN ĐỀ 6",
+        title: "Sơ Đồ Tư Duy: Lập Trình Hướng Đối Tượng (OOP)",
+        subtitle: "Class chuẩn mực, Kế thừa super(), Sắp xếp Comparable và Biến Static",
+        nodes: [
+          {
+            title: "Khung Class Tiêu Chuẩn",
+            color: "#e06c75",
+            branches: [
+              "Thuộc tính luôn để <code>private</code> (Đóng gói Encapsulation)",
+              "Hàm khởi tạo (Constructor): Constructor rỗng và đầy đủ tham số",
+              "Bộ Getter & Setter: Truy xuất an toàn",
+              "Ghi đè <code>toString()</code>: In thông tin đối tượng đẹp mắt"
+            ]
+          },
+          {
+            title: "Kế Thừa (Inheritance)",
+            color: "#3574f0",
+            branches: [
+              "Từ khóa: <code>class SubClass extends SuperClass</code>",
+              "Quy tắc vàng: <code>super(param...)</code> phải ở <strong>dòng lệnh ĐẦU TIÊN</strong> trong constructor",
+              "Ghi đè phương thức: Dùng annotation <code>@Override</code>"
+            ]
+          },
+          {
+            title: "Sắp Xếp Đối Tượng (Comparable)",
+            color: "#499c54",
+            branches: [
+              "Khai báo: <code>class Book implements Comparable&lt;Book&gt;</code>",
+              "Phương thức bắt buộc: <code>public int compareTo(Book o)</code>",
+              "So sánh số thực: <code>Double.compare(this.price, o.price)</code>",
+              "So sánh chuỗi: <code>this.name.compareTo(o.name)</code>",
+              "Gọi hàm sắp xếp: <code>Collections.sort(list);</code>"
+            ]
+          },
+          {
+            title: "Thành Viên Tĩnh (Static)",
+            color: "#f5a623",
+            branches: [
+              "Biến <code>static</code>: Thuộc về lớp, dùng chung cho mọi instance",
+              "Bài toán kinh điển: <code>annualInterestRate</code> trong <code>SavingsAccount</code>",
+              "Cách truy cập chuẩn: <code>ClassName.staticField</code> (không dùng <code>this.</code>)"
+            ]
+          }
+        ],
+        codeSnippet: `// 1. CLASS IMPLEMENTS COMPARABLE:
+class Book implements Comparable<Book> {
+    private String title;
+    private double price;
+
+    public Book(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return Double.compare(this.price, o.price); // Giá tăng dần
+    }
+}
+
+// 2. KẾ THỪA:
+class Square extends Rectangle {
+    public Square(double side) {
+        super(side, side); // BẮT BUỘC DÒNG ĐẦU TIÊN!
+    }
+}`,
+        trap: "Trong hàm khởi tạo lớp con, nếu gọi <code>super()</code> sau bất kỳ câu lệnh nào khác, chương trình sẽ báo lỗi biên dịch ngay lập tức.",
+        tip: "Khai báo xong thuộc tính, ấn <code>Alt + Insert</code> (hoặc <code>Fn + Alt + Insert</code>) để IntelliJ tự sinh toàn bộ Constructor, Getter/Setter và toString trong 3 giây!"
+      },
+      {
+        id: "slide-8",
+        badge: "BÍ QUYẾT PHÒNG THI",
+        title: "Chiến Thuật IntelliJ IDEA & Checklist 10 Điểm",
+        subtitle: "Quy trình gõ mã thần tốc, Reformat chuẩn chỉ và Checklist nộp bài",
+        nodes: [
+          {
+            title: "Bộ 5 Live Templates Thần Tốc",
+            color: "#3574f0",
+            branches: [
+              "<code>psvm + Tab</code>: Sinh nhanh hàm <code>public static void main</code>",
+              "<code>sout + Tab</code>: Sinh <code>System.out.println();</code>",
+              "<code>souf + Tab</code>: Sinh <code>System.out.printf(\"\");</code>",
+              "<code>fori + Tab</code>: Sinh vòng lặp <code>for (int i = 0; i &lt; ...; i++)</code>",
+              "<code>iter + Tab</code>: Sinh vòng lặp foreach duyệt mảng / collection"
+            ]
+          },
+          {
+            title: "Bộ 4 Phím Tắt Tối Thượng",
+            color: "#499c54",
+            branches: [
+              "<code>Alt + Insert</code>: Generate mã tự động (Constructor, Getter/Setter)",
+              "<code>Ctrl + Alt + L</code>: Căn lề, thụt dòng toàn bộ code siêu chuẩn",
+              "<code>Alt + Enter</code>: Quick Fix (tự import thư viện, implement interface)",
+              "<code>Shift + F10</code>: Chạy chương trình (Run)"
+            ]
+          },
+          {
+            title: "Checklist 5 Phút Trước Khi Nộp",
+            color: "#f5a623",
+            branches: [
+              "1. Tên class chính phải khớp chính xác với đề bài (phân biệt hoa thường)",
+              "2. Nếu đề yêu cầu package default, hãy xóa dòng <code>package ...;</code> ở đầu",
+              "3. Chạy thử test case biên: n = 0, n âm, xâu rỗng, điểm 10",
+              "4. Ấn <code>Ctrl + Alt + L</code> một lần nữa trước khi lưu file"
+            ]
+          },
+          {
+            title: "Tâm Lý Phòng Thi Vững Vàng",
+            color: "#e06c75",
+            branches: [
+              "Bài thi chia làm 2-3 câu nhỏ (thường 1 câu cơ bản/mảng + 1 câu OOP)",
+              "Làm câu OOP trước nếu đã nắm vững <code>Alt + Insert</code> (ăn chắc 4-5 điểm)",
+              "Bình tĩnh đọc kỹ định dạng đầu ra (dấu cách, dấu tab, số chữ số thập phân)"
+            ]
+          }
+        ],
+        codeSnippet: `// CHECKLIST THỰC HÀNH TẠI PHÒNG MÁY:
+1. Mở IntelliJ -> New Project (chọn đúng JDK đã cài).
+2. Tạo file Java Class đúng tên trong đề (ví dụ: Bai1.java).
+3. Gõ 'psvm + Tab' -> Vào main -> Gõ 'Scanner sc = new Scanner(System.in);'
+4. Code giải quyết bài toán -> Test kỹ với dữ liệu mẫu.
+5. Ấn 'Ctrl + Alt + L' định dạng code -> Đóng project nộp bài!`,
+        trap: "Nộp bài nhưng quên xóa dòng <code>package com.company;</code> có thể làm chấm máy tự động báo lỗi không tìm thấy class!",
+        tip: "Mỗi khi gõ sai hoặc thiếu thư viện, chỉ cần bấm <code>Alt + Enter</code>, IntelliJ sẽ tự import đúng thư viện cho bạn."
+      }
+    ];
+
+    let currentSlideIndex = 0;
+    let slideMode = 'deck'; // 'deck' or 'tree'
     let currentCategory = 'all';
+    let currentProblemId = PROBLEMS[0].id;
     let isMemoryMode = false;
-    let memorizedSet = new Set(JSON.parse(localStorage.getItem('vmu_memorized_set') || '[]'));
     let currentFcIndex = 0;
+    let memorizedSet = new Set(JSON.parse(localStorage.getItem('vmu_memorized_set') || '[]'));
 
     function init() {
-      // Load saved font size preference
       const savedFont = localStorage.getItem('vmu_font_size') || 'large';
       setFontSize(savedFont);
 
+      renderSlide();
+      renderFullTree();
       renderProblemList();
       selectProblem(currentProblemId);
       updateProgressBar();
       renderFlashcard();
+      setupTouchSwipe();
+      setupKeyboard();
     }
 
-    function setFontSize(size) {
-      document.body.classList.remove('font-normal', 'font-large', 'font-xlarge');
-      if (size === 'large') {
-        document.body.classList.add('font-large');
-      } else if (size === 'xlarge') {
-        document.body.classList.add('font-xlarge');
+    /* SLIDE RENDER LOGIC */
+    function renderSlide() {
+      const slot = document.getElementById('slide-card-slot');
+      if (!slot) return;
+
+      const slide = SLIDES_DATA[currentSlideIndex];
+      const counterEl = document.getElementById('slide-counter');
+      if (counterEl) counterEl.innerText = `${currentSlideIndex + 1} / ${SLIDES_DATA.length}`;
+
+      let nodesHtml = '';
+      slide.nodes.forEach(n => {
+        let branchHtml = n.branches.map(b => `<li>${b}</li>`).join('');
+        nodesHtml += `
+          <div class="mm-node" style="--node-color: ${n.color};">
+            <div class="mm-node-title">
+              <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${n.color};"></span>
+              ${n.title}
+            </div>
+            <ul class="mm-node-branches">
+              ${branchHtml}
+            </ul>
+          </div>
+        `;
+      });
+
+      let codeHtml = '';
+      if (slide.codeSnippet) {
+        codeHtml = `
+          <div class="callout-code">
+            <div style="background:#1e2024; padding:6px 14px; font-size:12px; font-family:var(--font-code); color:var(--text-muted); border-bottom:1px solid #2e3035; display:flex; justify-content:space-between; align-items:center;">
+              <span>Mã Nguồn Mẫu Chuẩn • IntelliJ Ready</span>
+              <button class="btn" style="padding:2px 8px; font-size:11px;" onclick="copyText(\`${escapeForJs(slide.codeSnippet)}\`)">Copy Code</button>
+            </div>
+            <pre><code>${escapeHtml(slide.codeSnippet)}</code></pre>
+          </div>
+        `;
       }
-      localStorage.setItem('vmu_font_size', size);
 
-      document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-      const activeBtn = document.getElementById('btn-font-' + size);
-      if (activeBtn) activeBtn.classList.add('active');
+      slot.innerHTML = `
+        <div class="slide-card">
+          <div class="slide-header">
+            <div class="slide-title-group">
+              <h2>${slide.title}</h2>
+              <p>${slide.subtitle}</p>
+            </div>
+            <span class="slide-badge">${slide.badge}</span>
+          </div>
+
+          <div class="mindmap-graph">
+            ${nodesHtml}
+          </div>
+
+          ${codeHtml}
+
+          <div class="callout-box callout-trap">
+            <div>⚠️</div>
+            <div><strong>Cạm bẫy phòng thi:</strong> ${slide.trap}</div>
+          </div>
+
+          <div class="callout-box callout-tip">
+            <div>💡</div>
+            <div><strong>Mẹo IntelliJ IDEA:</strong> ${slide.tip}</div>
+          </div>
+        </div>
+      `;
     }
 
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    function renderFullTree() {
+      const container = document.getElementById('full-tree-view');
+      if (!container) return;
+
+      let html = `
+        <div style="text-align:center; padding:10px 0;">
+          <h2 style="font-size:var(--fs-h1); color:#fff;">Sơ Đồ Cây Tư Duy Toàn Cảnh Java VMU</h2>
+          <p style="color:var(--text-muted); font-size:var(--fs-base); margin-top:4px;">Bấm vào từng chuyên đề để chuyển ngay tới Slide chi tiết tương ứng</p>
+        </div>
+      `;
+
+      SLIDES_DATA.forEach((s, idx) => {
+        if (idx === 0) return; // Bỏ qua slide tổng thể
+        let branches = s.nodes.map(n => `
+          <div style="background:#1b1d22; padding:10px 12px; border-radius:6px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:#fff; font-size:13.5px; margin-bottom:4px;">${n.title}</div>
+            <div style="font-size:12.5px; color:var(--text-muted);">${n.branches.map(b => b.replace(/<[^>]*>/g, '')).join(' • ')}</div>
+          </div>
+        `).join('');
+
+        html += `
+          <div class="overview-card" style="cursor:pointer;" onclick="goToSlide(${idx})">
+            <div class="card-head">
+              <div class="card-title">${s.badge}: ${s.title}</div>
+              <span class="card-badge" style="background:var(--accent); color:#fff;">Xem Slide #${idx + 1} &rarr;</span>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px; margin-top:8px;">
+              ${branches}
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function nextSlide() {
+      if (currentSlideIndex < SLIDES_DATA.length - 1) {
+        currentSlideIndex++;
+        renderSlide();
+        scrollSlideToTop();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        renderSlide();
+        scrollSlideToTop();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlideIndex = idx;
+      setSlideMode('deck');
+      renderSlide();
+      scrollSlideToTop();
+    }
+
+    function scrollSlideToTop() {
+      const vp = document.getElementById('slide-viewport');
+      if (vp) vp.scrollTop = 0;
+    }
+
+    function setSlideMode(mode) {
+      slideMode = mode;
+      document.getElementById('btn-mode-slide')?.classList.toggle('active', mode === 'deck');
+      document.getElementById('btn-mode-tree')?.classList.toggle('active', mode === 'tree');
       
-      const tabIds = ['overview', 'deepdive', 'flashcards', 'intellij'];
-      const idx = tabIds.indexOf(tabId);
-      if (idx !== -1) {
-        const btns = document.querySelectorAll('.tab-btn');
-        if (btns[idx]) btns[idx].classList.add('active');
-        const targetPane = document.getElementById('pane-' + tabId);
-        if (targetPane) targetPane.classList.add('active');
+      const slot = document.getElementById('slide-card-slot');
+      const tree = document.getElementById('full-tree-view');
+      const nav = document.getElementById('slide-nav-controls');
+
+      if (mode === 'deck') {
+        if (slot) slot.style.display = 'flex';
+        if (tree) tree.classList.remove('active');
+        if (nav) nav.style.display = 'flex';
+      } else {
+        if (slot) slot.style.display = 'none';
+        if (tree) tree.classList.add('active');
+        if (nav) nav.style.display = 'none';
       }
     }
 
-    function setCategoryFilter(cat, btn) {
-      currentCategory = cat;
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      renderProblemList();
+    function setupTouchSwipe() {
+      const vp = document.getElementById('slide-viewport');
+      if (!vp) return;
+      let startX = 0;
+      let startY = 0;
+
+      vp.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].screenX;
+        startY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      vp.addEventListener('touchend', (e) => {
+        if (slideMode !== 'deck') return;
+        const diffX = e.changedTouches[0].screenX - startX;
+        const diffY = e.changedTouches[0].screenY - startY;
+
+        if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) nextSlide();
+          else prevSlide();
+        }
+      }, { passive: true });
     }
 
-    function filterProblems() {
-      renderProblemList();
+    function setupKeyboard() {
+      window.addEventListener('keydown', (e) => {
+        const activePane = document.querySelector('.tab-pane.active');
+        if (!activePane || activePane.id !== 'pane-slides') return;
+        if (slideMode !== 'deck') return;
+
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+          e.preventDefault();
+          nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          prevSlide();
+        }
+      });
     }
 
+    /* DEEP DIVE PROBLEM SELECTION & MASTER-DETAIL */
     function renderProblemList() {
       const query = (document.getElementById('search-box')?.value || '').toLowerCase().trim();
       const listEl = document.getElementById('problem-list');
@@ -1845,7 +3021,7 @@ class Book implements Comparable<Book> {
 
         item.innerHTML = `
           <div class="item-top">
-            <span class="item-title">${isMem ? '&#9989; ' : ''}${p.title}</span>
+            <span class="item-title">${isMem ? '✅ ' : ''}${p.title}</span>
             <span class="item-badge ${badgeClass}">${p.tag}</span>
           </div>
           <div class="item-desc">${p.className} • ${p.categoryName}</div>
@@ -1859,6 +3035,11 @@ class Book implements Comparable<Book> {
       const p = PROBLEMS.find(x => x.id === id);
       if (!p) return;
 
+      const deepdivePane = document.getElementById('pane-deepdive');
+      if (deepdivePane && window.innerWidth <= 900) {
+        deepdivePane.classList.add('mobile-show-detail');
+      }
+
       document.querySelectorAll('.problem-item').forEach(el => {
         el.classList.toggle('active', el.innerText.includes(p.title));
       });
@@ -1866,8 +3047,20 @@ class Book implements Comparable<Book> {
       const detailEl = document.getElementById('detail-view');
       if (!detailEl) return;
       const isMem = memorizedSet.has(p.id);
+      const currIdx = PROBLEMS.findIndex(x => x.id === p.id);
 
       detailEl.innerHTML = `
+        <div class="mobile-detail-nav">
+          <button class="btn-back-list" onclick="backToProblemList()">
+            &larr; Danh sách 35 bài
+          </button>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button class="btn" style="padding:4px 8px;" onclick="navigateProblem(-1)" ${currIdx === 0 ? 'disabled' : ''}>&larr;</button>
+            <span style="font-size:12px; font-weight:700; color:var(--text-muted);">${currIdx + 1}/${PROBLEMS.length}</span>
+            <button class="btn" style="padding:4px 8px;" onclick="navigateProblem(1)" ${currIdx === PROBLEMS.length - 1 ? 'disabled' : ''}>&rarr;</button>
+          </div>
+        </div>
+
         <div class="detail-header">
           <div class="detail-title-group">
             <h1>${p.title}</h1>
@@ -1881,46 +3074,48 @@ class Book implements Comparable<Book> {
           </div>
           <div class="actions-group">
             <button class="btn btn-memorized ${isMem ? 'checked' : ''}" onclick="toggleMemorize('${p.id}')">
-              ${isMem ? '&#10003; Đã thuộc' : '&#9744; Đánh dấu đã thuộc'}
+              ${isMem ? '✓ Đã thuộc' : '☐ Đánh dấu đã thuộc'}
             </button>
             <button class="btn btn-primary" onclick="copyCode()">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>
               Copy vào IntelliJ
             </button>
           </div>
         </div>
 
         <div class="memory-toggle-bar">
-          <div class="memory-desc">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/></svg>
-            <span><strong>Chế độ luyện nhớ code:</strong> Làm mờ các dòng logic chính. Bạn hãy tự nghĩ cách code hoặc gõ vào IntelliJ trước, rồi bấm vào dòng bị mờ để kiểm tra đáp án!</span>
+          <div style="display:flex; align-items:center; gap:8px; color:#f7b955; line-height:1.4;">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/></svg>
+            <span><strong>Chế độ che code:</strong> Bấm vào dòng mờ để kiểm tra trí nhớ.</span>
           </div>
-          <button class="btn" style="background:#3b321c; border-color:#e5a84b; color:#f7b955; white-space:nowrap;" onclick="toggleMemoryMode()">
-            ${isMemoryMode ? '&#9679; Đang bật (Hiện code đầy đủ)' : '&#9675; Bật che code logic'}
+          <button class="btn" style="background:#3b321c; border-color:#e5a84b; color:#f7b955;" onclick="toggleMemoryMode()">
+            ${isMemoryMode ? '● Đang bật (Hiện full)' : '○ Bật che code logic'}
           </button>
         </div>
 
         <div class="info-card">
-          <h3>Đề bài & Yêu cầu</h3>
-          <p>${p.summary}</p>
+          <h3 style="font-size:var(--fs-h3); color:#fff; margin-bottom:8px;">Đề bài & Yêu cầu</h3>
+          <p style="font-size:var(--fs-base); line-height:1.55; color:#d2d6df;">${p.summary}</p>
           <div class="io-grid">
             <div>
-              <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-weight:600;">Input mẫu:</div>
+              <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px; font-weight:600;">Input mẫu:</div>
               <div class="io-box input-box">${escapeHtml(p.inputExample)}</div>
             </div>
             <div>
-              <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-weight:600;">Output mẫu:</div>
+              <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px; font-weight:600;">Output mẫu:</div>
               <div class="io-box">${escapeHtml(p.outputExample)}</div>
             </div>
           </div>
         </div>
 
-        <div class="trap-box">
-          <strong>&#9888; Cạm bẫy phòng thi cần nhớ:</strong> ${p.trap}
+        <div class="callout-box callout-trap">
+          <div>⚠️</div>
+          <div><strong>Cạm bẫy phòng thi:</strong> ${p.trap}</div>
         </div>
 
-        <div class="tip-box">
-          <strong>&#9889; Mẹo IntelliJ IDEA:</strong> ${p.intellijTip}
+        <div class="callout-box callout-tip">
+          <div>💡</div>
+          <div><strong>Mẹo IntelliJ IDEA:</strong> ${p.intellijTip}</div>
         </div>
 
         <div class="code-container">
@@ -1930,7 +3125,33 @@ class Book implements Comparable<Book> {
           </div>
           <pre class="code-block" id="active-code">${renderCodeWithBlur(p.code, p.memoryPoints)}</pre>
         </div>
+
+        <div class="problem-footer-nav">
+          <button class="btn" onclick="navigateProblem(-1)" ${currIdx === 0 ? 'disabled' : ''}>
+            &larr; Bài trước
+          </button>
+          <button class="btn btn-primary" onclick="navigateProblem(1)" ${currIdx === PROBLEMS.length - 1 ? 'disabled' : ''}>
+            Bài tiếp theo &rarr;
+          </button>
+        </div>
       `;
+    }
+
+    function backToProblemList() {
+      const deepdivePane = document.getElementById('pane-deepdive');
+      if (deepdivePane) {
+        deepdivePane.classList.remove('mobile-show-detail');
+      }
+    }
+
+    function navigateProblem(direction) {
+      const currIdx = PROBLEMS.findIndex(x => x.id === currentProblemId);
+      const nextIdx = currIdx + direction;
+      if (nextIdx >= 0 && nextIdx < PROBLEMS.length) {
+        selectProblem(PROBLEMS[nextIdx].id);
+        const detailEl = document.getElementById('detail-view');
+        if (detailEl) detailEl.scrollTop = 0;
+      }
     }
 
     function renderCodeWithBlur(code, memoryPoints) {
@@ -1979,8 +3200,14 @@ class Book implements Comparable<Book> {
     function copyCode() {
       const p = PROBLEMS.find(x => x.id === currentProblemId);
       if (!p) return;
-      navigator.clipboard.writeText(p.code).then(() => {
+      copyText(p.code);
+    }
+
+    function copyText(str) {
+      navigator.clipboard.writeText(str).then(() => {
         showToast("Đã copy mã vào clipboard! Mở IntelliJ dán là xong!");
+      }).catch(() => {
+        showToast("Vui lòng cho phép quyền clipboard để copy!");
       });
     }
 
@@ -1989,7 +3216,52 @@ class Book implements Comparable<Book> {
       if (!toast) return;
       toast.innerText = msg;
       toast.classList.add('show');
-      setTimeout(() => { toast.classList.remove('show'); }, 2500);
+      setTimeout(() => { toast.classList.remove('show'); }, 2200);
+    }
+
+    /* TABS & FONT SWITCHING */
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+      const tabIds = ['slides', 'overview', 'deepdive', 'flashcards', 'intellij'];
+      const idx = tabIds.indexOf(tabId);
+      if (idx !== -1) {
+        const btns = document.querySelectorAll('.tab-btn');
+        if (btns[idx]) {
+          btns[idx].classList.add('active');
+          if (btns[idx].scrollIntoView) {
+            btns[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        }
+        const targetPane = document.getElementById('pane-' + tabId);
+        if (targetPane) targetPane.classList.add('active');
+      }
+    }
+
+    function setCategoryFilter(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderProblemList();
+    }
+
+    function filterProblems() {
+      renderProblemList();
+    }
+
+    function setFontSize(size) {
+      document.body.classList.remove('font-normal', 'font-large', 'font-xlarge');
+      if (size === 'large') {
+        document.body.classList.add('font-large');
+      } else if (size === 'xlarge') {
+        document.body.classList.add('font-xlarge');
+      }
+      localStorage.setItem('vmu_font_size', size);
+
+      document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-font-' + size);
+      if (activeBtn) activeBtn.classList.add('active');
     }
 
     /* FLASHCARD LOGIC */
@@ -2031,6 +3303,14 @@ class Book implements Comparable<Book> {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+    }
+
+    function escapeForJs(str) {
+      if (!str) return '';
+      return str
+        .replace(/\\/g, '\\\\')
+        .replace(/`/g, '\\`')
+        .replace(/\$/g, '\\$');
     }
 
     window.onload = init;
