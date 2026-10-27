@@ -3010,7 +3010,7 @@ class Square extends Rectangle {
       filtered.forEach(p => {
         const item = document.createElement('div');
         item.className = 'problem-item' + (p.id === currentProblemId ? ' active' : '');
-        item.onclick = () => selectProblem(p.id);
+        item.onclick = () => selectProblem(p.id, true);
 
         let badgeClass = 'badge-freq';
         if (p.tag === 'Cốt lõi') badgeClass = 'badge-core';
@@ -3030,13 +3030,13 @@ class Square extends Rectangle {
       });
     }
 
-    function selectProblem(id) {
+    function selectProblem(id, isUserClick = false) {
       currentProblemId = id;
       const p = PROBLEMS.find(x => x.id === id);
       if (!p) return;
 
       const deepdivePane = document.getElementById('pane-deepdive');
-      if (deepdivePane && window.innerWidth <= 900) {
+      if (deepdivePane && isUserClick && window.innerWidth <= 900) {
         deepdivePane.classList.add('mobile-show-detail');
       }
 
@@ -3148,7 +3148,7 @@ class Square extends Rectangle {
       const currIdx = PROBLEMS.findIndex(x => x.id === currentProblemId);
       const nextIdx = currIdx + direction;
       if (nextIdx >= 0 && nextIdx < PROBLEMS.length) {
-        selectProblem(PROBLEMS[nextIdx].id);
+        selectProblem(PROBLEMS[nextIdx].id, true);
         const detailEl = document.getElementById('detail-view');
         if (detailEl) detailEl.scrollTop = 0;
       }
